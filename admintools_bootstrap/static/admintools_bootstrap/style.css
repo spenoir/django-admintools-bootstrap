@@ -1,0 +1,101 @@
+.page-top .pull-right {
+	margin-top: -33px;
+}
+
+h1, ul, li {
+	margin: 0;
+}
+
+#changelist-filter {
+	float: right;
+	width: 180px;
+}
+
+#changelist-filter li {
+	list-style: none;
+	list-style-position: outside;
+	padding-left: 8px;
+}
+
+#changelist-filter ul {
+	margin-left: -0.5em;
+}
+
+#changelist-filter li.selected {
+	border-left: 4px solid gray;
+	padding-left: 4px;
+}
+
+.content {
+	margin-right: 230px;
+}
+
+#chabgelist-search {
+	margin-left: 2em;
+}
+
+.changelist-action label {
+	display: inline;
+	width: auto;
+}
+
+.changelist-action label,
+.changelist-action select,
+.changelist-action button
+{
+	margin-right: 0.5em;
+}
+
+.changelist-action {
+	margin-top: 0.5em;
+	margin-bottom: 0.8em;
+}
+
+.errorlist li {
+	list-style: none;
+	color: red;
+}
+
+.pagination ul {
+	margin-left: 1em;
+}
+
+.pagination input {
+	margin-left: 1em;
+	height: 35px;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+.help_text {
+	font-size: small;
+	color: #999;
+	text-transform: lowercase;
+	margin-top: 0.1em;
+}
+
+.readonly-input {
+	margin-top: 0.6em;
+}
+
+.empty-form {
+	display: none;
+}
+
+.dashboard-module li {
+	list-style: none;
+}
+
+.dashboard-module h2 {
+	font-size: 14pt;
+	padding-top: 0px;
+	padding-bottom: 10px;
+}
+
+#container {
+	padding-top: 50px;
+}
+
+td.action-checkbox {
+	width: 1.5em;
+}

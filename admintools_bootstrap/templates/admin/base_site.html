@@ -1,0 +1,28 @@
+{% extends "admin/base.html" %}
+{% load i18n admin_tools_menu_tags %}
+
+{% block title %}{{ title }} | {% trans 'Django site admin' %}{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+{% if user.is_active and user.is_staff %}
+{% if not is_popup %}
+{#{% admin_tools_render_menu_css %}#}
+<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}admintools_bootstrap/js/bootstrap-dropdown.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}admintools_bootstrap/js/bootstrap-alerts.js"></script>
+{% endif %}
+{% endif %}
+{% endblock %}
+
+{% block branding %}
+<a class="brand">{% trans 'Django administration' %}</a>
+{% endblock %}
+
+{% block nav-global %}
+{% if user.is_active and user.is_staff %}
+{% if not is_popup %}
+{% admin_tools_render_menu %}
+{% endif %}
+{% endif %}
+{% endblock %}
