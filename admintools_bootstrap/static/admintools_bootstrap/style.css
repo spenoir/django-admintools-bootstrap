@@ -110,3 +110,16 @@ td.action-checkbox {
 #result_list {
 	width: 100% !important;
 }
+
+.login .hero-unit {
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 80px;
+	padding-top: 30px;
+	padding-bottom: 10px;
+}
+
+.login .hero-unit h1 {
+	font-size: 26pt;
+	margin-bottom: 20px;
+}
