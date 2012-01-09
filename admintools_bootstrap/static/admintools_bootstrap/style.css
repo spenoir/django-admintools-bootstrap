@@ -98,3 +98,8 @@ h1, ul, li {
 td.action-checkbox {
 	width: 1.5em;
 }
+
+.container-popup {
+	min-width: 700px !important; /* replacing bootstrap's value */
+	padding-top: 10px !important;
+}

@@ -19,7 +19,7 @@
 <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}">
 
 <!-- Container -->
-<div id="container" class="container-fluid">
+<div id="container" class="container-fluid{% if is_popup %} container-popup{% endif %}">
     {% if not is_popup %}
     <!-- Header -->
     <div id="header" class="topbar" data-dropdown="dropdown">
