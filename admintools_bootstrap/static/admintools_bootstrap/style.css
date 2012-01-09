@@ -103,3 +103,11 @@ td.action-checkbox {
 	min-width: 700px !important; /* replacing bootstrap's value */
 	padding-top: 10px !important;
 }
+
+#result_list td select {
+	width: 100%;
+}
+
+#result_list {
+	width: 100% !important;
+}
