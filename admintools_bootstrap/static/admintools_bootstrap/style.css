@@ -8,6 +8,7 @@ h1, ul, li {
 
 #changelist-filter {
 	float: right;
+	max-width: 180px;
 }
 
 #changelist-filter li {
