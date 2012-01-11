@@ -5,7 +5,6 @@ django-admin-tools fork
 from setuptools import setup, find_packages
 
 install_requires = [
-    'Django>=1.3',
     'django-admin-tools>=0.4.1',
 ]
 

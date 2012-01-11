@@ -7,7 +7,7 @@
     {% if item.children and item.enabled %}
     <ul class="dropdown-menu">
         {% for child_item in item.children %}
-        {% admin_tools_render_menu_item child_item %}
+          {% admin_tools_render_menu_item child_item forloop.counter %}
         {% endfor %}
     </ul>
     {% endif %}
