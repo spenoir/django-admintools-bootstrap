@@ -5,7 +5,7 @@
 <fieldset class="module well">
    <h2>{{ inline_admin_formset.opts.verbose_name_plural|capfirst }}</h2>
    {{ inline_admin_formset.formset.non_form_errors }}
-   <table class="bordered-table zebra-striped">
+   <table class="bordered-table zebra-striped tabular-inline">
      <thead><tr>
      {% for field in inline_admin_formset.fields %}
        {% if not field.widget.is_hidden %}
@@ -67,6 +67,7 @@
 <script type="text/javascript">
 (function($) {
     $(document).ready(function($) {
+        $('.tabular-inline textarea').addClass('xxlarge');
         var rows = "#{{ inline_admin_formset.formset.prefix }}-group .tabular.inline-related tbody tr";
         var alternatingRows = function(row) {
             $(rows).not(".add-row").removeClass("row1 row2")

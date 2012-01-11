@@ -124,3 +124,22 @@ td.action-checkbox {
 	font-size: 26pt;
 	margin-bottom: 20px;
 }
+
+.stacked-inline span.delete {
+	float: right;
+}
+
+.stacked-inline span.delete label {
+	width: 50px;
+	margin-top: 0px;
+	padding-top: 4px;
+}
+
+.stacked-inline span.delete input {
+	margin-top: 5px;
+	float: left;
+}
+
+.inline-addlink {
+	color: #fff !important;
+}
