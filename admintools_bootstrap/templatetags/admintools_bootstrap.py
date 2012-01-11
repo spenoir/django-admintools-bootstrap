@@ -75,3 +75,65 @@ def bootstrap_pagination(cl):
         'curr_page': cl.paginator.page(cl.page_num+1),
     }
 bootstrap_pagination = register.inclusion_tag('admin/pagination.html')(bootstrap_pagination)
+
+# breadcrumbs tag
+
+class BreadcrumbsNode(template.Node):
+    """
+        renders bootstrap breadcrumbs list.
+        usage::
+            {% breadcrumbs %}
+            url1|text1
+            url2|text2
+            text3
+            {% endbreadcrumbs %}
+        | is delimiter by default, you can use {% breadcrumbs delimiter_char %} to change it.
+        lines without delimiters are interpreted as active breadcrumbs
+
+    """
+    def __init__(self, nodelist, delimiter):
+        self.nodelist = nodelist
+        self.delimiter = delimiter
+
+    def render(self, context):
+        data = self.nodelist.render(context).strip()
+        if not data:
+            return ''
+        out = '<ul class="breadcrumb">'
+        lines = [ l.strip() for l in data.split("\n") if l.strip() ]
+        curr = 0
+        for line in lines:
+            d = line.split(self.delimiter)
+            if d[0][0] == '*':
+                active = ' class="active"'
+                d[0] = d[0][1:]
+            else:
+                active = ''
+            
+            curr += 1
+            if (len(lines) == curr):
+                # last
+                divider = ''
+            else:
+                divider = '<span class="divider">/</span>'
+
+            if len(d) == 2:
+                out += '<li%s><a href="%s">%s</a>%s</li>' % (active, d[0], d[1], divider)
+            elif len(d) == 1:
+                out += '<li%s>%s%s</li>' % (active, d[0], divider)
+            else:
+                raise ValueError('Invalid breadcrumb line: %s' % line)
+        out += '</ul>'
+        return out
+
+@register.tag(name='breadcrumbs')
+def do_breadcrumbs(parser, token):
+    try:
+        tag_name, delimiter = token.contents.split(None, 1)
+    except ValueError:
+        delimiter = '|'
+
+    nodelist = parser.parse(('endbreadcrumbs',))
+    parser.delete_first_token()
+
+    return BreadcrumbsNode(nodelist, delimiter)

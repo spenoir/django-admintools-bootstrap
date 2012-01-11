@@ -1,4 +1,4 @@
-{% load theming_tags %}
+{% load theming_tags admintools_bootstrap %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}" xml:lang="{{ LANGUAGE_CODE }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
 <head>
@@ -80,11 +80,12 @@ $(function(){
       </div>
     </div>
     <!-- END Header -->
+      {% breadcrumbs %}
       {% block breadcrumbs %}
-        <ul class="breadcrumb" style="margin-top: 40px">
-          <li><a href="/">{% trans 'Home' %}</a>{% if title %} <span class="divider">/</span></li><li class="active"> {{ title }}{% endif %}</li>
-        </ul>
+        /|{% trans "Home" %}
+        {% if title %}{{ title }}{% endif %}
       {% endblock %}
+      {% endbreadcrumbs %}
     {% endif %}
 
     <div class="main-container">

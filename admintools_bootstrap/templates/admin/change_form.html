@@ -14,14 +14,14 @@
 
 {% block bodyclass %}{{ opts.app_label }}-{{ opts.object_name.lower }} change-form{% endblock %}
 
-{% block breadcrumbs %}{% if not is_popup %}
-<ul class="breadcrumb">
-     <li><a href="../../../">{% trans "Home" %}</a> <span class="divider">/</span></li>
-     <li><a href="../../">{{ app_label|capfirst|escape }}</a> <span class="divider">/</span></li>
-     <li class="active">{% if has_change_permission %}<a href="../">{{ opts.verbose_name_plural|capfirst }}</a>{% else %}{{ opts.verbose_name_plural|capfirst }}{% endif %} <span class="divider">/</span></li>
-     <li class="active">{% if add %}{% trans "Add" %} {{ opts.verbose_name }}{% else %}{{ original|truncatewords:"18" }}{% endif %}</li>
-</ul>
-{% endif %}{% endblock %}
+{% block breadcrumbs %}
+{% if not is_popup %}
+../../../|{% trans "Home" %}
+../../|{{ app_label|capfirst|escape }}
+*{% if has_change_permission %}../|{{ opts.verbose_name_plural|capfirst }}{% else %}{{ opts.verbose_name_plural|capfirst }}{% endif %}
+*{% if add %}{% trans "Add" %} {{ opts.verbose_name }}{% else %}{{ original|truncatewords:"18" }}{% endif %}
+{% endif %}
+{% endblock %}
 
 {% block object-tools %}
 {% if change %}{% if not is_popup %}

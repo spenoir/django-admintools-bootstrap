@@ -35,15 +35,13 @@
 
 {% block bodyclass %}change-list{% endblock %}
 
-{% if not is_popup %}
-  {% block breadcrumbs %}
-    <ul class="breadcrumb">
-      <li><a href="../../">{% trans "Home" %}</a><span class="divider">/</span></li>
-      <li><a href="../">{{ app_label|capfirst }}</a><span class="divider">/</span></li>
-      <li class="active">{{ cl.opts.verbose_name_plural|capfirst }}</li>
-    </ul>
-  {% endblock %}
-{% endif %}
+{% block breadcrumbs %}
+  {% if not is_popup %}
+    ../../|{% trans "Home" %}
+    ../|{{ app_label|capfirst }}
+    {{ cl.opts.verbose_name_plural|capfirst }}
+  {% endif %}
+{% endblock %}
 
 {% block coltype %}flex{% endblock %}
 

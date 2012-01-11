@@ -1,10 +1,8 @@
 {% extends "admin/base_site.html" %}
-{% load i18n %}
+{% load i18n admintools_bootstrap %}
 
 {% block breadcrumbs %}
-  <ul class="breadcrumb">
-    <li><a href="../">{% trans 'Home' %}</a></li>
-  </ul>
+../|{% trans 'Home' %}
 {% endblock %}
 
 {% block content %}
