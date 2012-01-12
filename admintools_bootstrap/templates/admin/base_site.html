@@ -1,8 +1,8 @@
 {% extends "admin/base.html" %}
-{% load i18n admin_tools_menu_tags %}
+{% load i18n admin_tools_menu_tags admintools_bootstrap %}
 {% load url from future %}
 
-{% block title %}{{ title }} | {% if site %}{{ site.name }} {% trans "admin" %}{% else %}{% trans 'Django site admin' %}{% endif %}{% endblock %}
+{% block title %}{{ title }} | {% site_name %} {% trans "admin" %}{% endblock %}
 
 {% block extrastyle %}
 {{ block.super }}
@@ -24,7 +24,7 @@
 {% endblock %}
 
 {% block branding %}
-<a class="brand" href="{% url 'admin:index' %}">{% if site %}{{ site.name }} {% trans "admin" %}{% else %}{% trans 'Django admin' %}{% endif %}</a>
+<a class="brand" href="{% url 'admin:index' %}">{% site_name %} {% trans "admin" %}</a>
 {% endblock %}
 
 {% block nav-global %}

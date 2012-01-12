@@ -1,12 +1,24 @@
 from django import template
 from django.utils.safestring import mark_safe
 from django.utils.html import escape
+from django.utils.translation import ugettext as _
 from django.contrib.admin.views.main import PAGE_VAR, ALL_VAR
+from django.conf import settings
+from django.contrib.sites.models import Site
 
 from BeautifulSoup import BeautifulSoup
 
 
 register = template.Library()
+
+
+@register.simple_tag
+def site_name():
+    if 'django.contrib.sites' in settings.INSTALLED_APPS:
+        return Site.objects.get_current().name
+    else:
+        return _('Django site')
+
 
 @register.simple_tag
 def bootstrap_page_url(cl, page_num):
