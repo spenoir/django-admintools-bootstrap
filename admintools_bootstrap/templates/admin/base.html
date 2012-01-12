@@ -44,8 +44,12 @@ $(function(){
         {% block search %}{% endblock %}
         {% if user.is_active and user.is_staff %}
         <ul class="nav secondary-nav">
+            <li><a href="/"  title="{% trans "Open site" %}"><span class="ui-icon ui-icon-home ui-state-default"></span></a></li>
             <li class="dropdown">
-              <a class="dropdown-toggle" href="#">{% filter force_escape %}{% firstof user.first_name user.username %}{% endfilter %}</a>
+              <a class="dropdown-toggle" href="#">
+                <span class="ui-icon ui-icon-person ui-state-default"></span>
+                {% filter force_escape %}{% firstof user.first_name user.username %}{% endfilter %}
+              </a>
               <ul class="dropdown-menu">
               {% block userlinks %}
                   {% url django-admindocs-docroot as docsroot %}
