@@ -6,6 +6,7 @@ from setuptools import setup, find_packages
 
 install_requires = [
     'django-admin-tools>=0.4.1',
+    'BeautifulSoup>=3.2.0',
 ]
 
 setup(
