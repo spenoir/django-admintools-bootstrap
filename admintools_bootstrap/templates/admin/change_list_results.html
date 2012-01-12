@@ -1,3 +1,4 @@
+{% load i18n %}
 {% if result_hidden_fields %}
 <div class="hiddenfields">{# DIV for HTML validation #}
 {% for item in result_hidden_fields %}{{ item }}{% endfor %}
@@ -8,10 +9,19 @@
 <table cellspacing="0" id="result_list" class="bordered-table zebra-striped">
 <thead>
 <tr>
-{% for header in result_headers %}<th scope="col"{{ header.class_attrib }}>
-{% if header.sortable %}<a href="{{ header.url }}">{% endif %}
-{{ header.text|capfirst }}
-{% if header.sortable %}</a>{% endif %}</th>{% endfor %}
+{% for header in result_headers %}
+<th scope="col" {{ header.class_attrib }}>
+   <div class="text">{% if header.sortable %}<a href="{{ header.url_primary }}">{{ header.text|capfirst }}</a>{% else %}<span>{{ header.text|capfirst }}</span>{% endif %}</div>
+   {% if header.sortable %}
+     {% if header.sort_priority > 0 %}
+       <div class="sortoptions label info">
+         <a href="{{ header.url_toggle }}" class="ui-icon {% if header.ascending %}ui-icon-triangle-1-n{% else %}ui-icon-triangle-1-s{% endif %}" title="{% trans "Toggle sorting" %}"></a>
+         <a class="ui-icon ui-icon-close" href="{{ header.url_remove }}" title="{% trans "Remove from sorting" %}"></a>
+       </div>
+     {% endif %}
+   {% endif %}
+   <div class="clear"></div>
+</th>{% endfor %}
 </tr>
 </thead>
 <tbody>
