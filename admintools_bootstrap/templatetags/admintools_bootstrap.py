@@ -3,6 +3,8 @@ from django.utils.safestring import mark_safe
 from django.utils.html import escape
 from django.contrib.admin.views.main import PAGE_VAR, ALL_VAR
 
+from BeautifulSoup import BeautifulSoup
+
 
 register = template.Library()
 
@@ -97,19 +99,35 @@ class BreadcrumbsNode(template.Node):
 
     def render(self, context):
         data = self.nodelist.render(context).strip()
+
         if not data:
             return ''
+
+        try:
+            data.index('<div class="breadcrumbs">')
+        except ValueError:
+            lines = [ l.strip().split(self.delimiter) for l in data.split("\n") if l.strip() ]
+        else:
+            # data is django-style breadcrumbs, parsing
+            try:
+                soup = BeautifulSoup(data)
+                lines = [ (a.get('href'), a.text) for a in soup.findAll('a')]
+                lines.append([soup.find('div').text.split('&rsaquo;')[-1].strip()])
+            except Exception, e:
+                lines = [["Cannot parse breadcrumbs: %s" % unicode(e)]]
+
+        print lines
+
+
         out = '<ul class="breadcrumb">'
-        lines = [ l.strip() for l in data.split("\n") if l.strip() ]
         curr = 0
-        for line in lines:
-            d = line.split(self.delimiter)
+        for d in lines:
             if d[0][0] == '*':
                 active = ' class="active"'
                 d[0] = d[0][1:]
             else:
                 active = ''
-            
+
             curr += 1
             if (len(lines) == curr):
                 # last
@@ -122,7 +140,7 @@ class BreadcrumbsNode(template.Node):
             elif len(d) == 1:
                 out += '<li%s>%s%s</li>' % (active, d[0], divider)
             else:
-                raise ValueError('Invalid breadcrumb line: %s' % line)
+                raise ValueError('Invalid breadcrumb line: %s' % self.delimiter.join(d))
         out += '</ul>'
         return out
 
