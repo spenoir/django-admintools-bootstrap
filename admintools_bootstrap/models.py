@@ -2,6 +2,7 @@
 # monkey-pathching django admin
 
 from django.contrib.admin import widgets
+from django.contrib.admin.templatetags.admin_static import static
 from django import forms
 
 class FilteredSelectMultiple(forms.SelectMultiple):
@@ -12,3 +13,6 @@ class FilteredSelectMultiple(forms.SelectMultiple):
         super(FilteredSelectMultiple, self).__init__(attrs, choices)
 
 widgets.FilteredSelectMultiple = FilteredSelectMultiple
+
+# using jquery ui do display .vDateField
+widgets.AdminDateWidget.media = None
