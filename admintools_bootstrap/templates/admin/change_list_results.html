@@ -14,7 +14,7 @@
    <div class="text">{% if header.sortable %}<a href="{{ header.url_primary }}">{{ header.text|capfirst }}</a>{% else %}<span>{{ header.text|capfirst }}</span>{% endif %}</div>
    {% if header.sortable %}
      {% if header.sort_priority > 0 %}
-       <div class="sortoptions label info">
+       <div class="sortoptions label notice">
          <a href="{{ header.url_toggle }}" class="ui-icon {% if header.ascending %}ui-icon-triangle-1-n{% else %}ui-icon-triangle-1-s{% endif %}" title="{% trans "Toggle sorting" %}"></a>
          <a class="ui-icon ui-icon-close" href="{{ header.url_remove }}" title="{% trans "Remove from sorting" %}"></a>
        </div>
