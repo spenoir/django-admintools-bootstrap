@@ -1,7 +1,7 @@
 {% extends "admin/base.html" %}
 {% load i18n admin_tools_menu_tags %}
 
-{% block title %}{{ title }} | {% trans 'Django site admin' %}{% endblock %}
+{% block title %}{{ title }} | {% if site %}{{ site.name }} {% trans "admin" %}{% else %}{% trans 'Django site admin' %}{% endif %}{% endblock %}
 
 {% block extrastyle %}
 {{ block.super }}
@@ -23,7 +23,7 @@
 {% endblock %}
 
 {% block branding %}
-<a class="brand">{% trans 'Django administration' %}</a>
+<a class="brand">{% if site %}{{ site.name }} {% trans "admin" %}{% else %}{% trans 'Django admin' %}{% endif %}</a>
 {% endblock %}
 
 {% block nav-global %}

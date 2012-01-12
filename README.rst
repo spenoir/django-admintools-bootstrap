@@ -27,3 +27,11 @@ Install package::
 Insert `admintools_bootstrap` to your INSTALLED_APPS before `admin_tools` and `django.contrib.admin` apps.
 
 Enjoy.
+
+
+Site name in navigation bar and title
+------------------------------------
+
+admintools-bootstrap can use current site to display site name in admin interface.
+
+To enable this feature, add `django.contrib.sites` to your `INSTALLED_APPS` list (if you have not yet), and `admintools_bootstrap.context_processors.site` to `TEMPLATE_CONTEXT_PROCESSORS` list.
