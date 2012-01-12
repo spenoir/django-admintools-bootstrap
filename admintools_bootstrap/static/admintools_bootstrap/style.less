@@ -1,3 +1,5 @@
+@import "lib/bootstrap.less";
+
 .page-top .pull-right {
 	margin-top: -33px;
 }
@@ -9,22 +11,23 @@ h1, ul, li {
 #changelist-filter {
 	float: right;
 	max-width: 180px;
+
+	li {
+		list-style: none;
+		list-style-position: outside;
+		padding-left: 8px;
+	}
+
+	ul {
+		margin-left: -0.5em;
+	}
+
+	li.selected {
+		border-left: 4px solid gray;
+		padding-left: 4px;
+	}
 }
 
-#changelist-filter li {
-	list-style: none;
-	list-style-position: outside;
-	padding-left: 8px;
-}
-
-#changelist-filter ul {
-	margin-left: -0.5em;
-}
-
-#changelist-filter li.selected {
-	border-left: 4px solid gray;
-	padding-left: 4px;
-}
 
 .content {
 	margin-right: 230px;
@@ -34,21 +37,20 @@ h1, ul, li {
 	margin-left: 2em;
 }
 
-.changelist-action label {
-	display: inline;
-	width: auto;
-}
 
-.changelist-action label,
-.changelist-action select,
-.changelist-action button
-{
-	margin-right: 0.5em;
-}
 
 .changelist-action {
 	margin-top: 0.5em;
 	margin-bottom: 0.8em;
+
+	label, select, button {
+		margin-right: 0.5em;
+	}
+
+	label {
+		display: inline;
+		width: auto;
+	}
 }
 
 .errorlist li {
@@ -56,16 +58,19 @@ h1, ul, li {
 	color: red;
 }
 
-.pagination ul {
-	margin-left: 1em;
+
+.pagination {
+	ul {
+		margin-left: 1em;
+	}
+	input {
+		margin-left: 1em;
+		height: 35px;
+		padding-left: 2em;
+		padding-right: 2em;
+	}
 }
 
-.pagination input {
-	margin-left: 1em;
-	height: 35px;
-	padding-left: 2em;
-	padding-right: 2em;
-}
 
 .help_text {
 	font-size: small;
@@ -82,15 +87,18 @@ h1, ul, li {
 	display: none;
 }
 
-.dashboard-module li {
-	list-style: none;
+.dashboard-module {
+	li {
+		list-style: none;
+	}
+
+	h2 {
+		font-size: 14pt;
+		padding-top: 0px;
+		padding-bottom: 10px;
+	}
 }
 
-.dashboard-module h2 {
-	font-size: 14pt;
-	padding-top: 0px;
-	padding-bottom: 10px;
-}
 
 #container {
 	padding-top: 50px;
@@ -105,9 +113,6 @@ td.action-checkbox {
 	padding-top: 10px !important;
 }
 
-#result_list td select {
-}
-
 #result_list {
 	width: 100% !important;
 }
@@ -118,27 +123,29 @@ td.action-checkbox {
 	margin-top: 80px;
 	padding-top: 30px;
 	padding-bottom: 10px;
+
+	h1 {
+		font-size: 26pt;
+		margin-bottom: 20px;
+	}
 }
 
-.login .hero-unit h1 {
-	font-size: 26pt;
-	margin-bottom: 20px;
-}
 
 .stacked-inline span.delete {
 	float: right;
+
+	label {
+		width: 50px;
+		margin-top: 0px;
+		padding-top: 4px;
+	}
+
+	input {
+		margin-top: 5px;
+		float: left;
+	}
 }
 
-.stacked-inline span.delete label {
-	width: 50px;
-	margin-top: 0px;
-	padding-top: 4px;
-}
-
-.stacked-inline span.delete input {
-	margin-top: 5px;
-	float: left;
-}
 
 .inline-addlink {
 	color: #fff !important;
