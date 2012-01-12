@@ -7,7 +7,10 @@
       {% endif %}
       {{ field }}
     {% endfor %}
-    <button type="submit" class="btn primary" title="{% trans "Run the selected action" %}" name="index" value="{{ action_index|default:0 }}">{% trans "Go" %}</button>
+    <button type="submit" class="btn" title="{% trans "Run the selected action" %}" name="index" value="{{ action_index|default:0 }}">
+      <span class="ui-icon ui-icon-play"></span>
+      {% trans "Go" %}
+    </button>
     {% if actions_selection_counter %}
         <script type="text/javascript">var _actions_icnt="{{ cl.result_list|length|default:"0" }}";</script>
         <span class="action-counter">{{ selection_note }}</span>
