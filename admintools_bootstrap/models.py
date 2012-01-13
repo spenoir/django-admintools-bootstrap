@@ -15,3 +15,10 @@ widgets.FilteredSelectMultiple = FilteredSelectMultiple
 
 # using jquery ui do display .vDateField
 widgets.AdminDateWidget.media = None
+
+# patching admintools menu item
+
+from admin_tools.menu import items
+
+# addming icon argument to base MenuItem class
+items.MenuItem.icon = None

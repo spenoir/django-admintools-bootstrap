@@ -38,3 +38,21 @@ To enable this feature, add `django.contrib.sites` to your `INSTALLED_APPS` list
 and `admintools_bootstrap.context_processors.site` to `TEMPLATE_CONTEXT_PROCESSORS` list.
 
 Set site name and domain in `django.contrib.sites` admin.
+
+
+Icons in menu items
+-------------------
+
+You can display icon from JQuery UI icon set on menu items. Add icon argument to MenuItem definition::
+
+ items.AppList(
+        _('Users'),
+        models=('django.contrib.auth.*',),
+        icon='ui-icon-person'
+ )
+
+
+Used software:
+--------------
+
+* http://addyosmani.github.com/jquery-ui-bootstrap/

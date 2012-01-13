@@ -124,8 +124,23 @@ h1, ul, li {
 
 	h2 {
 		font-size: 14pt;
-		padding-top: 0px;
-		padding-bottom: 10px;
+		line-height: 12pt;
+	}
+
+	h3 {
+		font-size: 12pt;
+		line-height: 15pt;
+
+		a {
+			margin-left: -15px;
+			color: @green !important;
+			font-weight: bold !important;
+		}
+	}
+	li {
+		a {
+			margin-left: 10px;
+		}
 	}
 }
 
@@ -202,6 +217,9 @@ td.action-checkbox {
 		padding-right: 0;
 		margin-right: 0;
 	}
+}
+
+.nav, .secondary-nav {
 	.ui-icon {
 		float: left;
 		margin: 0 8px 0 0px;
