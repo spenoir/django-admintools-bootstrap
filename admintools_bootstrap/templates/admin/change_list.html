@@ -26,11 +26,23 @@
 <script type="text/javascript">
 (function($) {
     $(document).ready(function($) {
-        $("tr input.action-select").actions();
+        $("tr input.action-select").actions({
+          actionContainer: 'div.actions',
+          counterContainer: '.selection_info, .selection-info span.action-counter',
+          allContainer: '.selection-info, .selection-info span.all',
+          acrossQuestions: 'span.question',
+          acrossClears: 'span.clear',
+          acrossInput: "div.changelist-actions input.select-across"
+        });
     });
 })(django.jQuery);
+
+$(function(){
+  $('.bts').buttonset();
+});
 </script>
 {% endif %}{% endif %}
+
 {% endblock %}
 
 {% block bodyclass %}change-list{% endblock %}

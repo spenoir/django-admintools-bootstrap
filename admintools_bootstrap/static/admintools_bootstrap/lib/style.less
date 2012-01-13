@@ -40,26 +40,46 @@ h1, ul, li {
 }
 
 
-
-.changelist-action {
-	margin-top: 0.5em;
-	margin-bottom: 0.8em;
-
-	label, select, button {
-		margin-right: 0.5em;
-	}
-
-	label {
-		display: inline;
-		width: auto;
-	}
-
-	button {
-		margin-left: 5px;
-		min-width: 70px;
-		* {
-			float: left;	
+.changelist-actions {
+	.changelist-action {
+		margin-top: 0.5em;
+		margin-bottom: 0.8em;
+		label, select, button {
+			margin-right: 0.5em;
 		}
+
+		label {
+			display: inline;
+			width: auto;
+		}
+		.action-wrapper {
+			float: left;
+		}
+		button {
+			height: 28px;
+			margin-left: 5px;
+			min-width: 80px;
+			* {
+				float: left;	
+			}
+			float: right;
+		}
+	}
+
+	.ui-toolbar {
+		height: 28px;
+	}
+	/* clearing bootstrap .actions class */
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	span.clear, span.question, .selection-info {
+		display: none;
+	}
+	.ui-icon {
+		float: left;
+		margin-right: 5px;
 	}
 }
 
