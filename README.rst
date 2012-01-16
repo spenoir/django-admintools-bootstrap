@@ -25,6 +25,7 @@ Install package::
  $ pip install -e hg+https://bitbucket.org/salvator/django-admintools-bootstrap#egg=admintools_bootstrap
 
 Insert `admintools_bootstrap` to your INSTALLED_APPS before `admin_tools` and `django.contrib.admin` apps.
+Make sure that `django.template.loaders.app_directories.Loader` are in the beginning of the `TEMPLATE_LOADERS` list.
 
 Enjoy.
 
@@ -50,6 +51,16 @@ You can display icon from JQuery UI icon set on menu items. Add icon argument to
         models=('django.contrib.auth.*',),
         icon='ui-icon-person'
  )
+
+
+Settings
+--------
+
+Site link::
+
+ ADMINTOOLS_BOOTSTRAP_SITE_LINK = '/'
+
+If not False, display link to site in the top panel
 
 
 Used software:

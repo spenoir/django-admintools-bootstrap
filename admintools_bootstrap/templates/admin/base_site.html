@@ -2,7 +2,7 @@
 {% load i18n admin_tools_menu_tags admintools_bootstrap %}
 {% load url from future %}
 
-{% block title %}{{ title }} | {% site_name %} {% trans "admin" %}{% endblock %}
+{% block title %}{{ title }} | {% atb_site_name %} {% trans "admin" %}{% endblock %}
 
 {% block extrastyle %}
 {{ block.super }}
@@ -25,7 +25,7 @@
 {% endblock %}
 
 {% block branding %}
-<a class="brand" href="{% url 'admin:index' %}">{% site_name %} {% trans "admin" %}</a>
+<a class="brand" href="{% url 'admin:index' %}">{% atb_site_name %} {% trans "admin" %}</a>
 {% endblock %}
 
 {% block nav-global %}

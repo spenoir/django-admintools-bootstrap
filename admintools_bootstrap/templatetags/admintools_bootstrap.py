@@ -13,7 +13,16 @@ register = template.Library()
 
 
 @register.simple_tag
-def site_name():
+def atb_site_link():
+    if settings.ADMINTOOLS_BOOTSTRAP_SITE_LINK:
+        return '''
+            <li><a href="%s"  class="top-icon" title="%s" rel="popover" data-placement="below"><span class="ui-icon ui-icon-home ui-state-default"></span></a></li>
+            ''' % (settings.ADMINTOOLS_BOOTSTRAP_SITE_LINK, _('Open site'))
+    else:
+        return ''
+
+@register.simple_tag
+def atb_site_name():
     if 'django.contrib.sites' in settings.INSTALLED_APPS:
         return Site.objects.get_current().name
     else:

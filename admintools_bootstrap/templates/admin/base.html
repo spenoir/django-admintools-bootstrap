@@ -45,7 +45,7 @@ $(function(){
         {% block search %}{% endblock %}
         {% if user.is_active and user.is_staff %}
         <ul class="nav secondary-nav">
-            <li><a href="/"  class="top-icon" title="{% trans "Open site" %}" rel="popover" data-placement="below"><span class="ui-icon ui-icon-home ui-state-default"></span></a></li>
+            {% atb_site_link %}
             <li class="dropdown">
               <a class="dropdown-toggle" href="#">
                 <span class="ui-icon ui-icon-person ui-state-default"></span>
