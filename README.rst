@@ -60,7 +60,7 @@ Site link::
 
  ADMINTOOLS_BOOTSTRAP_SITE_LINK = '/'
 
-If not False, display link to site in the top panel
+If not False, display specified link to site in the top panel
 
 
 Used software:
