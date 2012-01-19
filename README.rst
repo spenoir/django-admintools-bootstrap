@@ -67,3 +67,5 @@ Used software:
 --------------
 
 * http://addyosmani.github.com/jquery-ui-bootstrap/
+* http://twitter.github.com/bootstrap/
+* https://bitbucket.org/izi/django-admin-tools/
