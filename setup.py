@@ -21,7 +21,7 @@ setup(
     long_description=__doc__,
     install_requires=install_requires,
     packages=find_packages(),
-    license='BSD',
+    license='MIT',
     include_package_data=True,
     classifiers=[
         'Framework :: Django',
