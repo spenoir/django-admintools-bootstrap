@@ -137,9 +137,6 @@ class BreadcrumbsNode(template.Node):
             except Exception, e:
                 lines = [["Cannot parse breadcrumbs: %s" % unicode(e)]]
 
-        print lines
-
-
         out = '<ul class="breadcrumb">'
         curr = 0
         for d in lines:
