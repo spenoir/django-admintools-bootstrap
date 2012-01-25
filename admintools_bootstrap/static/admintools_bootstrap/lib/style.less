@@ -227,3 +227,78 @@ td.action-checkbox {
 	}
 }
 
+
+#menu_search {
+	@menu_search_width: 190px;
+	position: absolute;
+	z-index: 900;
+	border: 1px solid @gray;
+	background-color: @grayLighter;
+	padding: 10px;
+	left: -@menu_search_width + 10px;
+	width: @menu_search_width;
+	top: 40px;
+	.border-radius(0 0 6px 6px);
+	.box-shadow(0 2px 4px rgba(0,0,0,.2));
+	.background-clip(padding-box);
+	display: none;
+
+	ul {
+		width: 100%;
+		margin-top: 0.5em;
+		li {
+			list-style: none;
+			float: none;
+			padding: 0px;
+			a {
+				text-shadow: none;
+				padding: 0.2em 0.5em;
+				color: @gray;
+				&:hover,&:focus {
+					color: @grayLighter;
+					span.highlight {
+						color: @grayLighter;
+						font-weight: bold;
+					}
+					background-color: @gray;
+				}
+
+				span.highlight {
+					color: @grayDark;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	input {
+		width: @menu_search_width - 10;
+		background-color: @white;
+		color: @black !important;
+		// Placeholder text gets special styles; can't be bundled together though for some reason
+		&:-moz-placeholder {
+		  color: @gray;
+		}
+		&::-webkit-input-placeholder {
+		  color: @gray;
+		}
+		// Hover states
+		&:hover {
+		  background-color: @grayLight;
+		  background-color: rgba(255,255,255,.5);
+		  color: @white;
+		}
+		// Focus states (we use .focused since IE8 and down doesn't support :focus)
+		&:focus,
+		&.focused {
+		  background-color: @white;
+		  color: @grayDark;
+		  text-shadow: 0 1px 0 @white;
+		  border: 0;
+		  padding: 4px 9px;
+		  .box-shadow(0 0 3px rgba(0,0,0,.15));
+		}
+	}
+
+}
+
