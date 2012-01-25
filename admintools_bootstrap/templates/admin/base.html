@@ -3,7 +3,6 @@
 <html lang="{{ LANGUAGE_CODE }}" xml:lang="{{ LANGUAGE_CODE }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
 <head>
 <title>{% block title %}{% endblock %}</title>
-{#<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% load adminmedia %}{% admin_media_prefix %}css/base.css{% endblock %}" />#}
 {% block extrastyle %}{% endblock %}
 <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="{% block stylesheet_ie %}{% load adminmedia %}{% admin_media_prefix %}css/ie.css{% endblock %}" /><![endif]-->
 {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% admin_media_prefix %}css/rtl.css{% endblock %}" />{% endif %}
@@ -48,7 +47,7 @@ $(function(){
             {% atb_site_link %}
             <li class="dropdown">
               <a class="dropdown-toggle" href="#">
-                <span class="ui-icon ui-icon-person ui-state-default"></span>
+                <span class="ui-icon ui-icon-person"></span>
                 {% filter force_escape %}{% firstof user.first_name user.username %}{% endfilter %}
               </a>
               <ul class="dropdown-menu">
