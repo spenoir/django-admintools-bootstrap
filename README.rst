@@ -24,8 +24,9 @@ Install package::
 
  $ pip install -e hg+https://bitbucket.org/salvator/django-admintools-bootstrap#egg=admintools_bootstrap
 
-Insert `admintools_bootstrap` to your INSTALLED_APPS before `admin_tools` and `django.contrib.admin` apps.
-Make sure that `django.template.loaders.app_directories.Loader` are in the beginning of the `TEMPLATE_LOADERS` list.
+# Insert `admintools_bootstrap` to your INSTALLED_APPS before `admin_tools` and `django.contrib.admin` apps.
+# Make sure you have static files application installed and configured. See https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/ for details.
+
 
 Enjoy.
 
@@ -35,8 +36,7 @@ Site name in navigation bar and title
 
 admintools-bootstrap can use current site to display site name in admin interface.
 
-To enable this feature, add `django.contrib.sites` to your `INSTALLED_APPS` list (if you have not yet),
-and `admintools_bootstrap.context_processors.site` to `TEMPLATE_CONTEXT_PROCESSORS` list.
+To enable this feature, add `django.contrib.sites` to your `INSTALLED_APPS` list (if you have not yet).
 
 Set site name and domain in `django.contrib.sites` admin.
 
@@ -69,3 +69,6 @@ Used software:
 * http://addyosmani.github.com/jquery-ui-bootstrap/
 * http://twitter.github.com/bootstrap/
 * https://bitbucket.org/izi/django-admin-tools/
+* http://www.crummy.com/software/BeautifulSoup/
+* https://github.com/jezdez/django-appconf
+* http://pypi.python.org/pypi/versiontools
