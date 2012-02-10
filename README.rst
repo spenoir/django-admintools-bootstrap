@@ -26,9 +26,7 @@ Install package::
 
 * Insert `admintools_bootstrap` to your INSTALLED_APPS before `admin_tools` and `django.contrib.admin` apps.
 * Make sure you have static files application installed and configured. See https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/ for details.
-
-
-Enjoy.
+* Enjoy.
 
 
 Site name in navigation bar and title

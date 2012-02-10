@@ -306,3 +306,13 @@ td.action-checkbox {
 } 
 
 .action-wrapper .chzn-search { display: none; }
+
+fieldset {
+	&.collapsed * + * {
+		display: none;
+	}
+	h2 { 
+		border-bottom: 1px solid @grayLight; 
+		margin-bottom: 0.5em;
+	}
+}
