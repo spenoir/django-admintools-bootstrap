@@ -69,7 +69,7 @@ $(function(){
   {% endif %}
 {% endblock %}
 
-{% block search %}{% search_form cl %}{% endblock %}
+{% block search %}{% if cl %}{% search_form cl %}{% endif %}{% endblock %}
 
 {% block messages %}
   {{ block.super }}
