@@ -50,15 +50,19 @@
 {% if is_popup %}<input type="hidden" name="_popup" value="1" />{% endif %}
 {% if save_on_top %}{% submit_row %}{% endif %}
 
+{% block field_sets %}
 {% for fieldset in adminform %}
   {% include "admin/includes/fieldset.html" %}
 {% endfor %}
+{% endblock %}
 
 {% block after_field_sets %}{% endblock %}
 
+{% block inline_field_sets %}
 {% for inline_admin_formset in inline_admin_formsets %}
     {% include inline_admin_formset.opts.template %}
 {% endfor %}
+{% endblock %}
 
 {% block after_related_objects %}{% endblock %}
 
