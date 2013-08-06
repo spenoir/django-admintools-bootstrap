@@ -16,11 +16,17 @@
 
 {% block extrahead %}
 <script type="text/javascript" src="{% static 'admintools_bootstrap/js/jquery-1.7.1.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'admintools_bootstrap/chosen/chosen.jquery.js' %}"></script>
-<script type="text/javascript" src="{% static 'admintools_bootstrap/js/jquery-ui-1.8.16.custom.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'admintools_bootstrap/chosen/chosen.jquery.min.js' %}">
+	$('select').chosen();
+</script>
+<script type="text/javascript" src="{% static 'admintools_bootstrap/js/jquery-ui-1.8.16.custom.min.js' %}">
+	$('.vDateField').datepicker({dateFormat: 'yy-mm-dd'});
+</script>
 <script type="text/javascript" src="{% static 'admintools_bootstrap/js/bootstrap-dropdown.js' %}"></script>
 <script type="text/javascript" src="{% static 'admintools_bootstrap/js/bootstrap-alerts.js' %}"></script>
-<script type="text/javascript" src="{% static 'admintools_bootstrap/js/bootstrap-twipsy.js' %}"></script>
+<script type="text/javascript" src="{% static 'admintools_bootstrap/js/bootstrap-twipsy.js' %}">
+	$("a[rel=popover].top-icon").twipsy({offset: 20});
+</script>
 <script type="text/javascript" src="{% static 'admintools_bootstrap/js/init-ui.js' %}"></script>
 {% endblock %}
 
