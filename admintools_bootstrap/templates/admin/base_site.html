@@ -24,8 +24,13 @@
 </script>
 <script type="text/javascript" src="{% static 'admintools_bootstrap/js/bootstrap-dropdown.js' %}"></script>
 <script type="text/javascript" src="{% static 'admintools_bootstrap/js/bootstrap-alerts.js' %}"></script>
-<script type="text/javascript" src="{% static 'admintools_bootstrap/js/bootstrap-twipsy.js' %}">
-	$("a[rel=popover].top-icon").twipsy({offset: 20});
+<script type="text/javascript" src="{% static 'admintools_bootstrap/js/bootstrap-twipsy.js' %}"></script>
+
+<script type="text/javascript">
+	$(function(){
+        $('select').chosen();
+        $("a[rel=popover].top-icon").twipsy({offset: 20});
+    });
 </script>
 {% endblock %}
 
