@@ -7,3 +7,4 @@ syntax: glob
 build
 .directory
 dist/*
+.idea/*
