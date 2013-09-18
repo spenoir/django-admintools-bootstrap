@@ -1,6 +1,21 @@
+/* Utilities {{{ */
+
+.float-right {
+    float: right;
+}
+
+/* }}} */
+/* Dashboard general styles {{{ */
+
+.warning {
+    color: red;
+    background: transparent url(admin_tools/images/admin-tools.png) 0 -412px no-repeat;
+    padding-left: 25px;
+}
+
 .dashboard #content {
     display: block;
-    width: auto; !important;
+    width: auto !important;
 }
 
 .dashboard-container {
@@ -59,7 +74,7 @@ h1.dashboard-title {
 }
 
 .dashboard-column {
-    width: 49.9%;  
+    width: 49.9%;
     float: left;
     min-height: 200px;
 }
@@ -83,7 +98,7 @@ h1.dashboard-title {
     padding: 7px 5px 8px 8px;
     text-align: left;
     font-weight: normal;
-	background: url(../images/admin-tools.png) repeat-x 0 -245px;
+	background: url(admin_tools/images/admin-tools.png) repeat-x 0 -245px;
     height: 20px;
     color: #555;
 }
@@ -101,7 +116,7 @@ h1.dashboard-title {
     width: 17px;
     margin: 0 0 0 5px;
     cursor: pointer;
-    background-image: url(../images/admin-tools.png);
+    background-image: url(admin_tools/images/admin-tools.png);
     background-repeat: no-repeat;
 }
 
@@ -137,7 +152,7 @@ h1.dashboard-title {
 .dashboard-module h3 {
     padding: 5px 10px;
     margin: 0;
-    background: transparent url(../images/admin-tools.png) repeat-x 0 -325px;
+    background: transparent url(admin_tools/images/admin-tools.png) repeat-x 0 -325px;
     text-indent: 12px;
     height: 22px;
 }
@@ -175,7 +190,7 @@ h1.dashboard-title {
 }
 
 .dashboard-module ul li a.external-link {
-    background-image: url(../images/admin-tools.png);
+    background-image: url(admin_tools/images/admin-tools.png);
     background-repeat: no-repeat;
     background-position: -5px -168px;
     padding-left: 15px;
@@ -192,7 +207,7 @@ h1.dashboard-title {
     padding: 0 5px;
     vertical-align: top;
     height: auto;
-    line-height: auto;
+    line-height: 1.2em;
 }
 
 .dashboard-module ul li:hover {

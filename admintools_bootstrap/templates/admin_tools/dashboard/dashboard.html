@@ -1,0 +1,25 @@
+{% load i18n admin_tools_dashboard_tags %}
+{% load url from future %}
+
+{% if dashboard.title %}
+<h1 class="dashboard-title">{{ dashboard.title }}</h1>
+{% endif %}
+
+<div id="dashboard-panel">
+    <h3><a href="#">{% trans "Modules" %}</a></h3>
+    {% if has_disabled_modules %}
+    <ul>
+        {% spaceless %}
+        {% for module in dashboard.children %}
+        {% if not module.enabled %}
+        <li><a href="#" rel="module_{{ module.id }}" class="addlink add-dashboard-module">{{ module.title }}</a></li>
+        {% endif %}
+        {% endfor %}
+        {% endspaceless %}
+    </ul>
+    {% endif %}
+</div>
+<div id="{{ dashboard.get_id }}" class="dashboard-container">
+    {% for module in dashboard.children %}
+{% admin_tools_render_dashboard_module module %}{% endfor %}
+</div>

@@ -1,0 +1,7 @@
+{% load media admin_static %}
+{% include_media 'admin_dashboard.css' %}
+<!--[if lt IE 8]>
+<link rel="stylesheet" href="{% static 'admin_tools/css/dashboard-ie.css' %}" type="text/css" media="screen, projection"/>
+<![endif]-->
+{% for css in css_files %}
+<link rel="stylesheet" href="{% static css %}" type="text/css" media="screen, projection"/>{% endfor %}
