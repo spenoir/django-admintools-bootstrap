@@ -1,3 +1,5 @@
+@import "sass/constants";
+
 /* Utilities {{{ */
 
 .float-right {
@@ -11,6 +13,10 @@
     color: red;
     background: transparent url(admin_tools/images/admin-tools.png) 0 -412px no-repeat;
     padding-left: 25px;
+}
+
+.main-container {
+	margin-top: 60px;
 }
 
 .dashboard #content {
@@ -99,7 +105,6 @@ h1.dashboard-title {
     text-align: left;
     font-weight: normal;
 	background: url(admin_tools/images/admin-tools.png) repeat-x 0 -245px;
-    height: 20px;
     color: #555;
 }
 

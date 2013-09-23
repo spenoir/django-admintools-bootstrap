@@ -15,8 +15,9 @@
 	{% include_media 'admin.js' %}
 {% endblock %}
 
+
 {% block branding %}
-	<a class="brand" href="{% url 'admin:index' %}">{% atb_site_name %} {% trans "admin" %}</a>
+	<a class="navbar-brand" href="{% url 'admin:index' %}">{% atb_site_name %} {% trans "admin" %}</a>
 {% endblock %}
 
 {% block nav-global %}

@@ -9,5 +9,7 @@ var init_dashboard = function(id, columns, preferences, url) {
         }
     });
     $(".group-tabs").tabs();
-    $(".group-accordion").accordion({header: '.group-accordion-header'});
+    $(".group-accordion").accordion({
+	    header: '.group-accordion-header'
+    });
 };

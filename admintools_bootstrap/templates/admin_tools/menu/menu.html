@@ -10,7 +10,7 @@
 {% endif %}
 {% endif %}
 {% endcomment %}
-<ul id="navigation-menu" class="nav">
+<nav class="nav navbar-nav" role="navigation">
     {% for item in menu.children %}{% admin_tools_render_menu_item item forloop.counter %}{% endfor %}
-</ul>
+</nav>
 {% endif %}
