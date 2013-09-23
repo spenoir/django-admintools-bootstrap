@@ -16,7 +16,7 @@ register = template.Library()
 def atb_site_link():
     if settings.ADMINTOOLS_BOOTSTRAP_SITE_LINK:
         return '''
-            <li><a href="%s"  class="top-icon" title="%s" rel="popover" data-placement="below"><span class="ui-icon ui-icon-home"></span></a></li>
+            <li><a href="%s"  class="top-icon" title="%s" rel="popover" data-placement="below"><span class="glyphicon glyphicon-home"></span></a></li>
             ''' % (settings.ADMINTOOLS_BOOTSTRAP_SITE_LINK, _('Open site'))
     else:
         return ''

@@ -214,12 +214,9 @@ td.action-checkbox {
 }
 
 .nav, .secondary-nav {
-	.ui-icon {
-		float: left;
-		margin: 0 8px 0 0px;
-		width: 16px;
-		height: 16px;
-		background-image: url(admintools_bootstrap/lib/icons/ui-icons_ffffff_256x240.png);
+	.glyphicon {
+		width: 1.1em;
+		height: 1.1em;
 	}
 }
 

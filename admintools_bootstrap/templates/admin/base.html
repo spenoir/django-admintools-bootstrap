@@ -25,7 +25,7 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li id="menu-search-container">
 				<a href="#" id="menu-search-toggle" class="top-icon" title="{% trans "Menu Search" %}"
-				   rel="popover" data-placement="below"><span class="ui-icon ui-icon-search"></span></a>
+				   rel="popover" data-placement="below"><span class="glyphicon glyphicon-search"></span></a>
 
 				<div id="menu_search" class="form-group">
 					<input type="text" class="form-control" placeholder="{% trans "Search in menu" %}"/>
@@ -35,7 +35,7 @@
 			{% atb_site_link %}
 			<li class="dropdown">
 				<a class="dropdown-toggle" href="#">
-					<span class="ui-icon ui-icon-person"></span>
+					<span class="glyphicon glyphicon-user"></span>
 					{% filter force_escape %}{% firstof user.first_name user.username %}{% endfilter %}
 				</a>
 				<ul class="dropdown-menu">
@@ -106,7 +106,7 @@
 	<!-- END Content -->
 
 	{% block footer %}
-		<div id="footer"></div>{% endblock %}
+		<footer></footer>{% endblock %}
 </div>
 </div>
 <!-- END Container -->
