@@ -1,0 +1,23 @@
+django_admintools_bootstrap.egg-info/*
+
+# Python bytecode:
+*.py[co]
+
+# Packaging files:
+*.egg*
+
+# Editor temp files:
+*.swp
+*~
+
+# SQLite3 database files:
+*.db
+
+gateway/static/*
+
+.project
+.idea/*
+__MACOSX/*
+.DS_Store
+
+.sass-cache/*
