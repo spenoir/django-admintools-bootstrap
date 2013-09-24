@@ -5,6 +5,35 @@
 $redbor: 1px solid red;
 $menu_search_width: 190px;
 
+.main-container {
+	padding: $default-padding;
+	width: $page-width;
+}
+
+.navbar-nav > .disabled > a {
+	color: $light-grey;
+}
+
+.navbar-nav > li > a {
+	line-height: 1.4em;
+}
+
+.navbar {
+	background: $mid-grey;
+	@include box-shadow(0px 2px 10px $darkest-grey);
+
+	.navbar-brand, .nav li a {
+		font-size: 1.5em;
+	}
+
+	.nav li.dropdown ul a {
+		font-size: 1.1em;
+		white-space: nowrap;
+		display: inline-block;
+		padding-right: 20px;
+	}
+}
+
 .page-top .pull-right {
 	margin-top: -33px;
 }
@@ -213,24 +242,16 @@ td.action-checkbox {
 	}
 }
 
-.nav, .secondary-nav {
-	.glyphicon {
-		width: 1.1em;
-		height: 1.1em;
-	}
-}
-
 #menu_search {
 	position: absolute;
 	z-index: 900;
 	border: 1px solid $light-grey;
-	background-color: $mid-grey;
-	padding: 10px;
-	left: -$menu_search_width + 10px;
-	width: $menu_search_width;
-	top: 40px;
-	@include border-radius(0 0 6 px 6 px);
-	@include box-shadow(0 2 px 4 px rgba(0, 0, 0, .2));
+	background-color: $dark-grey;
+	padding: 3px;
+	left: -193px;
+	top: 1px;
+	@include border-radius(0 0 6px 6px);
+	@include box-shadow(0 2px 4px rgba(0, 0, 0, .2));
 	@include background-clip(padding-box);
 	display: none;
 
@@ -249,7 +270,6 @@ td.action-checkbox {
 					color: $mid-grey;
 					span.highlight {
 						color: $light-grey;
-						font-weight: bold;
 					}
 					background-color: $mid-grey;
 				}
@@ -263,7 +283,7 @@ td.action-checkbox {
 	}
 
 	input {
-		width: $menu_search_width - 10;
+		width: 100%;
 		background-color: $white;
 		color: $black !important;
 		border-color: $orange;
@@ -313,4 +333,8 @@ fieldset {
 		border-bottom: 1px solid $light-grey;
 		margin-bottom: 0.5em;
 	}
+}
+
+input[type="text"], input[type="password"], .ui-autocomplete-input, textarea, .uneditable-input {
+	width: 100%;
 }

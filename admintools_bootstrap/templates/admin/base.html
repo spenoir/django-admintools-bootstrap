@@ -17,7 +17,7 @@
 <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}">
 
 <!-- Header -->
-<header class="navbar navbar-inverse navbar-pills nav-justified navbar-fixed-top bs-docs-nav">
+<header class="navbar navbar-pills nav-justified navbar-fixed-top bs-docs-nav">
 	{% block branding %}{% endblock %}
 	{% block nav-global %}{% endblock %}
 	{% block search %}{% endblock %}
@@ -34,11 +34,11 @@
 			</li>
 			{% atb_site_link %}
 			<li class="dropdown">
-				<a class="dropdown-toggle" href="#">
+				<a class="dropdown-toggle" id="userdrop" href="#" role="button" data-toggle="dropdown">
 					<span class="glyphicon glyphicon-user"></span>
 					{% filter force_escape %}{% firstof user.first_name user.username %}{% endfilter %}
 				</a>
-				<ul class="dropdown-menu">
+				<ul class="dropdown-menu pull-right">
 					{% block userlinks %}
 						{% url 'django-admindocs-docroot' as docsroot %}
 						{% if docsroot %}
@@ -46,11 +46,7 @@
 						{% endif %}
 						{% url 'admin:password_change' as password_change_url %}
 						<li>
-							{% if password_change_url %}
-								<a href="{{ password_change_url }}">
-							{% else %}
-								<a href="{{ root_path }}password_change/">
-							{% endif %}
+							<a href="{% if password_change_url %}{{ password_change_url }}{% else %}{{ root_path }}password_change/{% endif %}">
 							{% trans 'Change password' %}</a>
 						</li>
 						{% url 'admin:logout' as logout_url %}
@@ -80,8 +76,10 @@
 	{% block messages %}
 		{% if messages %}
 			{% for message in messages %}
-				<div class="alert-message {{ message.tags }}" data-alert="alert"><a class="close"
-				                                                                    href="#">x</a>{{ message }}</div>
+				<div class="alert-message {{ message.tags }}" data-alert="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					{{ message }}
+				</div>
 			{% endfor %}
 		{% endif %}
 	{% endblock %}
@@ -91,7 +89,7 @@
 		{% block pretitle %}{% endblock %}
 		{% block content_title %}
 			{% if title %}
-				<div class="well page-top">
+				<div class="well well-lg page-top">
 					<h1>{{ title }}</h1>
 					{% block object-tools %}{% endblock %}
 				</div>
