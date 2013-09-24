@@ -30,6 +30,7 @@
 
 h1.dashboard-title {
     float: left;
+	margin-left: 10px;
 }
 
 #dashboard-panel {
@@ -159,7 +160,6 @@ h1.dashboard-title {
     margin: 0;
     background: transparent url(admin_tools/images/admin-tools.png) repeat-x 0 -325px;
     text-indent: 12px;
-    height: 22px;
 }
 
 .dashboard-module h3 a {

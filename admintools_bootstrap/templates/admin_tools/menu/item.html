@@ -9,6 +9,7 @@
 			   {% if item.children and item.enabled %}class="dropdown-toggle" data-toggle="dropdown" {% endif %}>
 				{% if item.icon %}<span class="glyphicon glyphicon {{ item.icon }}"></span>{% endif %}
 				{{ item.title }}
+				{% if item.children and item.enabled and index != 'submenu' %}<b class="caret"></b>{% endif %}
 			</a>
 			{% if item.children and item.enabled %}
 				<ul class="{% if index == 'submenu' %}submenu open{% else %}dropdown-menu{% endif %}">

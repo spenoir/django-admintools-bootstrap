@@ -37,6 +37,7 @@
 				<a class="dropdown-toggle" id="userdrop" href="#" role="button" data-toggle="dropdown">
 					<span class="glyphicon glyphicon-user"></span>
 					{% filter force_escape %}{% firstof user.first_name user.username %}{% endfilter %}
+					<b class="caret"></b>
 				</a>
 				<ul class="dropdown-menu pull-right">
 					{% block userlinks %}

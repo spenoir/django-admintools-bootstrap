@@ -5,16 +5,21 @@
 $redbor: 1px solid red;
 $menu_search_width: 190px;
 
-.main-container {
-	padding: $default-padding;
-	width: $page-width;
+body {
+	margin-top: 6em;
+}
+
+.main-container, header {
+	padding: 0 $default-padding;
+	width: 100%;
 }
 
 .navbar-nav > .disabled > a {
 	color: $light-grey;
 }
 
-.navbar-nav > li > a {
+.navbar-nav > li > a,
+.navbar-brand {
 	line-height: 1.4em;
 }
 
@@ -29,7 +34,6 @@ $menu_search_width: 190px;
 	.nav li.dropdown ul a {
 		font-size: 1.1em;
 		white-space: nowrap;
-		display: inline-block;
 		padding-right: 20px;
 	}
 }
