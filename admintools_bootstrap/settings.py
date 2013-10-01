@@ -1,8 +1,35 @@
 from appconf import AppConf
 
 
-BUNDLES = (
+ADMIN_MEDIA_BUNDLES = (
 
+    ('admin.css',
+        'admintools_bootstrap/chosen/chosen.css',
+        'admintools_bootstrap/sass/admin.scss',
+    ),
+
+    ('admin_dashboard.css',
+        'admintools_bootstrap/sass/dashboard.scss',
+    ),
+
+    ('admin.js',
+        'js/lazyload.js',
+        'admintools_bootstrap/js/jquery-1.7.1.min.js',
+        'admintools_bootstrap/js/jquery-ui-1.8.16.custom.min.js',
+        'admin_tools/js/json.min.js',
+        'admin_tools/js/jquery/jquery.cookie.min.js',
+        'admin_tools/js/menu.js',
+        'admintools_bootstrap/chosen/chosen.jquery.min.js',
+        'admintools_bootstrap/js/bootstrap/dropdown.js',
+        'admintools_bootstrap/js/bootstrap/alert.js',
+        'admintools_bootstrap/js/dismissAddAnotherPopup.js',
+        'admintools_bootstrap/js/admin.js',
+    ),
+
+    ('admin_dashboard.js',
+        'admin_tools/js/jquery/jquery.dashboard.js',
+        'admin_tools/js/dashboard.js',
+    ),
 )
 
 
@@ -17,6 +44,6 @@ class AdminToolsBootstrapConf(AppConf):
 admin_settings = AdminToolsBootstrapConf()
 
 if getattr(admin_settings, 'MEDIA_BUNDLES'):
-    admin_settings.MEDIA_BUNDLES += BUNDLES
+    admin_settings.MEDIA_BUNDLES += ADMIN_MEDIA_BUNDLES
 else:
-    setattr(admin_settings, 'MEDIA_BUNDLES', BUNDLES)
+    setattr(admin_settings, 'MEDIA_BUNDLES', ADMIN_MEDIA_BUNDLES)
