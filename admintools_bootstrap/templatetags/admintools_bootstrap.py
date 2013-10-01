@@ -147,17 +147,10 @@ class BreadcrumbsNode(template.Node):
                 else:
                     active = ''
 
-                curr += 1
-                if (len(lines) == curr):
-                    # last
-                    divider = ''
-                else:
-                    divider = '<span class="divider">/</span>'
-
                 if len(d) == 2:
-                    out += '<li%s><a href="%s">%s</a>%s</li>' % (active, d[0], d[1], divider)
+                    out += '<li%s><a href="%s">%s</a></li>' % (active, d[0], d[1])
                 elif len(d) == 1:
-                    out += '<li%s>%s%s</li>' % (active, d[0], divider)
+                    out += '<li%s>%s</li>' % (active, d[0])
                 else:
                     raise ValueError('Invalid breadcrumb line: %s' % self.delimiter.join(d))
         out += '</ul>'

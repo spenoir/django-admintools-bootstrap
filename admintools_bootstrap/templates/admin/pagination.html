@@ -1,9 +1,7 @@
 {% load admin_list admintools_bootstrap i18n %}
 {% load url from future %}
 
-<div class="pagination pull-right">
-
-<ul>
+<ul class="pagination pull-right">
   <li>
     {% if show_all_url %}
       <a href="{{ show_all_url }}">
@@ -37,5 +35,4 @@
 </ul>
 {% endif %}
 
-{% if cl.formset and cl.result_count %}<input type="submit" name="_save" class="default btn success" value="{% trans 'Save' %}"/>{% endif %}
-</div>
+{% if cl.formset and cl.result_count %}<input type="submit" name="_save" class="btn btn-success" value="{% trans 'Save' %}"/>{% endif %}

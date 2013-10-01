@@ -55,7 +55,7 @@ $(function () {
 		search_results.html(results);
 	});
 
-	$('#menu_search ul li a').live('keydown', function (e) {
+	$('#menu_search ul li a').on('keydown', function (e) {
 		var code = (e.keyCode ? e.keyCode : e.which);
 		if (code == 40) {
 			e.preventDefault();
@@ -67,7 +67,7 @@ $(function () {
 		}
 	});
 
-	$('#menu_search ul li a').live('mouseover', function (e) {
+	$('#menu_search ul li a').on('mouseover', function (e) {
 		$(this).focus();
 	});
 
