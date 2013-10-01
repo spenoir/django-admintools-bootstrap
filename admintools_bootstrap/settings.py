@@ -14,9 +14,8 @@ ADMIN_MEDIA_BUNDLES = (
 
     ('admin.js',
         'js/lazyload.js',
-        'admintools_bootstrap/js/jquery-1.7.1.min.js',
-        'admintools_bootstrap/js/jquery-ui-1.8.16.custom.min.js',
-        'admin_tools/js/json.min.js',
+        'admintools_bootstrap/js/jquery-1.9.1.min.js',
+        'admintools_bootstrap/js/json2.js',
         'admin_tools/js/jquery/jquery.cookie.min.js',
         'admin_tools/js/menu.js',
         'admintools_bootstrap/chosen/chosen.jquery.min.js',
