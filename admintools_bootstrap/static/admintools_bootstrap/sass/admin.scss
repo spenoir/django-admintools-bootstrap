@@ -1,6 +1,7 @@
 @import "compass";
 @import "constants";
 @import "admintools_bootstrap/lib/sass-bootstrap/sass-bootstrap";
+@import "admintools_bootstrap/sass/mixins";
 
 $redbor: 1px solid red;
 $menu_search_width: 190px;
@@ -323,6 +324,24 @@ td.action-checkbox {
 
 .action-wrapper .chzn-search {
 	display: none;
+}
+
+.vTextField,
+.vLargeTextField,
+.vURLField,
+.vIntegerField,
+.vBigIntegerField,
+.vManyToManyRawIdAdminField,
+.vForeignKeyRawIdAdminField,
+.vTimeField,
+.vDateField,
+.selectfilter,
+#id_tags {
+	@include form-control;
+}
+
+.datepicker td.active, .datepicker td.active:hover {
+	background: $brand-primary;
 }
 
 fieldset {
