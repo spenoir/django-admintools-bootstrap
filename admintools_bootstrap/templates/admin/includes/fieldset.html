@@ -1,4 +1,4 @@
-<fieldset class="module aligned {{ fieldset.classes }} well">
+<fieldset class="{{ fieldset.classes }} well">
     {% if fieldset.name %}<h2>{{ fieldset.name }}</h2>{% endif %}
     {% if fieldset.description %}
         <div class="description">{{ fieldset.description|safe }}</div>
@@ -10,9 +10,9 @@
 
                         {{ field.label_tag }}
                         {% if field.is_readonly %}
-                            <div class="readonly-input input">{{ field.contents }}</div>
+                            <div class="readonly-input form-group">{{ field.contents }}</div>
                         {% else %}
-                            <div class="input">
+                            <div class="form-group">
                               {{ field.field }}
                               {{ line.errors }}
                             </div>

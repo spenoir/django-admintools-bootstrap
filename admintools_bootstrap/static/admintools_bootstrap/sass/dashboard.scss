@@ -24,6 +24,10 @@
     width: auto !important;
 }
 
+#dashboard-panel {
+	margin: 2% 10px 0 0;
+}
+
 .dashboard-container {
     clear: both;
 }
@@ -31,43 +35,6 @@
 h1.dashboard-title {
     float: left;
 	margin-left: 10px;
-}
-
-#dashboard-panel {
-    margin: 0 10px 0 0;
-    float: right;
-}
-
-#dashboard-panel h3 a {
-    padding: 5px;
-    min-width: 100px;
-    display: block;
-    text-align: center;
-    border: 1px solid #e5e5e5;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-}
-
-#dashboard-panel ul {
-    display: none;
-    position: absolute;
-    top: auto;
-    right: 25px;
-    margin-top: -1px;
-}
-
-#dashboard-panel ul li {
-    padding: 5px;
-    border: 1px solid #e5e5e5;
-    background-color: white;
-}
-
-#dashboard-panel ul li a {
-    display: block;
-}
-
-#dashboard-panel:hover ul {
-    display: block;
 }
 
 .dashboard ul {
