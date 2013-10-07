@@ -88,7 +88,7 @@
 
 		{% block filters %}
 			{% if cl.has_filters %}
-				<div id="changelist-filter" class="sidebar well">
+				<div id="changelist-filter" class="pull-right panel">
 					<h2>{% trans 'Filter' %}</h2>
 					{% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
 				</div>
@@ -104,7 +104,7 @@
 					<div>{{ cl.formset.management_form }}</div>
 				{% endif %}
 
-				<div class="panel panel-default" id="changelist">
+				<div class="panel panel-default">
 				{% block result_list %}
 					{% if action_form and actions_on_top and cl.full_result_count %}
 						<div class="panel-heading">
