@@ -1,0 +1,41 @@
+{% extends "admin/change_list.html" %}
+{% load admin_list i18n %}
+
+{% block extrahead %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}feincms/fein_tree.css" />
+{% endblock %}
+
+
+{% block filters %}
+	{% if cl.has_filters %}
+		<div id="changelist-filter" class="pull-right panel">
+			<h2>{% trans 'Shortcuts' %}</h2>
+			<div class="btn-group-sm">
+				<a class="btn btn-danger" id="collapse_entire_tree" href="#">{% trans 'Collapse tree' %}</a>
+				<a class="btn btn-success" id="open_entire_tree" href="#">{% trans 'Expand tree' %}</a>
+			</div>
+
+			<h2>{% trans 'Filter' %}</h2>
+			{% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
+		</div>
+	{% endif %}
+{% endblock %}
+
+{% block extrafoot %}
+
+<script type="text/javascript">
+    var feincms = {
+        {% if FEINCMS_JQUERY_NO_CONFLICT %}
+            "jQuery": jQuery.noConflict(true)
+        {% else %}
+            "jQuery": jQuery
+        {% endif %}
+        , "tree_structure": {{ tree_structure|default:"null" }}
+    };
+</script>
+<script type="text/javascript" src="{{ STATIC_URL }}feincms/ie_compat.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}feincms/toolbox.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}feincms/fein_tree.js"></script>
+
+{% endblock %}
