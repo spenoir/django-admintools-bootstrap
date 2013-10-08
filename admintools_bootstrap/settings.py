@@ -7,12 +7,13 @@ ADMIN_MEDIA_BUNDLES = (
     ('admin.css',
         'admintools_bootstrap/chosen/chosen.css',
         'admintools_bootstrap/lib/datepicker.scss',
+        'admintools_bootstrap/lib/bootstrap-fileupload.scss',
         'admintools_bootstrap/sass/admin.scss',
     ),
 
-    ('admin_dashboard.css',
-        'admintools_bootstrap/sass/dashboard.scss',
-    ),
+    #('admin_dashboard.css',
+    #    'admintools_bootstrap/sass/dashboard.scss',
+    #),
 
     ('admin.js',
         'admintools_bootstrap/js/lazyload.js',
@@ -25,14 +26,15 @@ ADMIN_MEDIA_BUNDLES = (
         'admintools_bootstrap/js/bootstrap/dropdown.js',
         'admintools_bootstrap/js/bootstrap/alert.js',
         'admintools_bootstrap/js/bootstrap-datepicker.js',
+        'admintools_bootstrap/js/bootstrap-fileupload.js',
         'admintools_bootstrap/js/dismissAddAnotherPopup.js',
         'admintools_bootstrap/js/admin.js',
     ),
 
-    ('admin_dashboard.js',
-        'admin_tools/js/jquery/jquery.dashboard.js',
-        'admin_tools/js/dashboard.js',
-    ),
+    #('admin_dashboard.js',
+    #    'admin_tools/js/jquery/jquery.dashboard.js',
+    #    'admin_tools/js/dashboard.js',
+    #),
 )
 
 

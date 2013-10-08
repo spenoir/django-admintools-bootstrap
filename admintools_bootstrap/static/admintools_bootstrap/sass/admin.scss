@@ -339,6 +339,12 @@ td.action-checkbox {
 	@include form-control;
 }
 
+// Reset height for `textarea`s
+textarea.vTextField,
+textarea.vLargeTextField, {
+  height: auto;
+}
+
 .datepicker td.active, .datepicker td.active:hover {
 	background: $brand-primary;
 }
