@@ -90,7 +90,7 @@ h1, ul, li {
 			width: auto;
 		}
 		button {
-			margin-left: 5px;
+			margin: 1px 0px 0px 5px;
 			min-width: 80px;
 		}
 	}
@@ -340,6 +340,7 @@ td.action-checkbox {
 	@include form-control;
 }
 
+<<<<<<< HEAD
 input[type="text"].vForeignKeyRawIdAdminField {
 	width: 97%;
 	float: left;
@@ -353,6 +354,12 @@ input[type="text"].vForeignKeyRawIdAdminField {
 		margin-left: 10px;
 	}
 
+=======
+// Reset height for `textarea`s
+textarea.vTextField,
+textarea.vLargeTextField, {
+  height: auto;
+>>>>>>> 2c041d056fc79ed3b53513159c682b2b17d408a4
 }
 
 .datepicker td.active, .datepicker td.active:hover {
