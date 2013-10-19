@@ -335,8 +335,24 @@ td.action-checkbox {
 .vTimeField,
 .vDateField,
 .selectfilter,
-#id_tags {
+#id_tags,
+#id_ip_address {
 	@include form-control;
+}
+
+input[type="text"].vForeignKeyRawIdAdminField {
+	width: 97%;
+	float: left;
+
+	img {
+		display: none;
+	}
+
+	+ a {
+		font-size: 1.5em;
+		margin-left: 10px;
+	}
+
 }
 
 .datepicker td.active, .datepicker td.active:hover {

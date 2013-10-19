@@ -88,14 +88,16 @@
 
 		{% block filters %}
 			{% if cl.has_filters %}
-				<div id="changelist-filter" class="pull-right panel">
-					<h2>{% trans 'Filter' %}</h2>
-					{% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
-				</div>
+		<div id="changelist-filter" class="pull-right panel panel-default col-lg-3">
+			<div class="panel-heading">
+			<h2 class="panel-title">{% trans 'Filter' %}</h2>
+			</div>
+			{% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
+		</div>
 			{% endif %}
 		{% endblock %}
 
-		<div id="changelist">
+		<div id="changelist" class="panel panel-default {% if cl.has_filters %}col-lg-8{% else %}col-lg-11{% endif %}">
 			{% block date_hierarchy %}{% date_hierarchy cl %}{% endblock %}
 
 			<form id="changelist-form" action="" method="post"{% if cl.formset.is_multipart %}
@@ -104,7 +106,7 @@
 					<div>{{ cl.formset.management_form }}</div>
 				{% endif %}
 
-				<div class="panel panel-default">
+				<div class="">
 				{% block result_list %}
 					{% if action_form and actions_on_top and cl.full_result_count %}
 						<div class="panel-heading">

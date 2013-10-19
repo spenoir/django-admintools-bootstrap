@@ -24,7 +24,7 @@ ADMIN_MEDIA_BUNDLES = (
         'admintools_bootstrap/chosen/chosen.jquery.js',
         'admintools_bootstrap/js/bootstrap/dropdown.js',
         'admintools_bootstrap/js/bootstrap/alert.js',
-        'admintools_bootstrap/js/bootstrap-datepicker.js',
+        'admintools_bootstrap/js/bootstrap-datetimepicker.js',
         'admintools_bootstrap/js/dismissAddAnotherPopup.js',
         'admintools_bootstrap/js/admin.js',
     ),
