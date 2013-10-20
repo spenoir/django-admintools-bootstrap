@@ -89,7 +89,7 @@
 			{% endif %}
 		{% endblock %}
 
-		<div id="changelist" class="panel panel-default {% if cl.has_filters %}col-lg-8{% else %}col-lg-11{% endif %}">
+		<div id="changelist" class="panel panel-default {% if cl.has_filters %}col-lg-8{% else %}col-lg-12{% endif %}">
 			{% block date_hierarchy %}{% date_hierarchy cl %}{% endblock %}
 
 			<form id="changelist-form" action="" method="post"{% if cl.formset.is_multipart %}

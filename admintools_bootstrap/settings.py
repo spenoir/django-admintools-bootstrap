@@ -11,9 +11,9 @@ ADMIN_MEDIA_BUNDLES = (
         'admintools_bootstrap/sass/admin.scss',
     ),
 
-    #('admin_dashboard.css',
-    #    'admintools_bootstrap/sass/dashboard.scss',
-    #),
+    ('admin_dashboard.css',
+        'admintools_bootstrap/sass/dashboard.scss',
+    ),
 
     ('admin.js',
         'admintools_bootstrap/js/lazyload.js',
@@ -21,6 +21,7 @@ ADMIN_MEDIA_BUNDLES = (
         'admintools_bootstrap/js/jquery-ui-1.10.3.custom.js',
         'admintools_bootstrap/js/json2.js',
         'admin_tools/js/jquery/jquery.cookie.min.js',
+        'admin_tools/js/jquery/jquery.dashboard.js',
         'admin_tools/js/menu.js',
         'admintools_bootstrap/chosen/chosen.jquery.js',
         'admintools_bootstrap/js/bootstrap/dropdown.js',
@@ -30,11 +31,6 @@ ADMIN_MEDIA_BUNDLES = (
         'admintools_bootstrap/js/dismissAddAnotherPopup.js',
         'admintools_bootstrap/js/admin.js',
     ),
-
-    #('admin_dashboard.js',
-    #    'admin_tools/js/jquery/jquery.dashboard.js',
-    #    'admin_tools/js/dashboard.js',
-    #),
 )
 
 
