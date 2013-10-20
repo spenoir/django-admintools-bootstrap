@@ -2,9 +2,13 @@ $(function(){
 	$('select').chosen({
 		disable_search_threshold: 10
 	});
-	$(".datetime").datetimepicker({
-        format: "dd MM yyyy - hh:ii",
-        linkField: "mirror_field",
-        linkFormat: "yyyy-mm-dd hh:ii"
+
+	$(".form_datetime").datetimepicker({
+        format: "dd MM yyyy",
+        linkField: "id_submit_date_1",
+        linkFormat: "hh:ii",
+		pickerPosition: "bottom-left",
+		autoclose: true,
+        todayBtn: true
     });
 });

@@ -6,7 +6,7 @@ ADMIN_MEDIA_BUNDLES = (
 
     ('admin.css',
         'admintools_bootstrap/chosen/chosen.css',
-        'admintools_bootstrap/lib/datepicker.scss',
+        'admintools_bootstrap/lib/bootstrap-datetimepicker.css',
         'admintools_bootstrap/lib/bootstrap-fileupload.scss',
         'admintools_bootstrap/sass/admin.scss',
     ),

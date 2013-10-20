@@ -1,17 +1,24 @@
 {% load url from future %}
 {% load theming_tags admintools_bootstrap admin_static i18n %}
 <!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE }}" xml:lang="{{ LANGUAGE_CODE }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<html lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}" {% if LANGUAGE_BIDI %}dir="rtl"{% else %}dir="ltr"{% endif %}>
 <head>
 	<title>{% block title %}{% endblock %}</title>
+	<meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="cache-control" content="private"/>
+	<meta name="robots" content="noodp"/>
+	<meta name="language" content="{{ LANGUAGE_CODE }}"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 	{% block extrastyle %}{% endblock %}
 	{% if LANGUAGE_BIDI %}
-		<link rel="stylesheet" type="text/css"
+	<link rel="stylesheet" type="text/css"
 		      href="{% block stylesheet_rtl %}{% static 'admin/css/rtl.css' %}{% endblock %}"/>
 	{% endif %}
 	<script type="text/javascript">window.__admin_media_prefix__ = "{% filter escapejs %}{% static '' %}{% endfilter %}";</script>
 	{% block extrahead %}{% endblock %}
-	{% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE"/>{% endblock %}
+	{% block blockbots %}
+	<meta name="robots" content="NONE,NOARCHIVE"/>{% endblock %}
 </head>
 
 <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}">
@@ -47,8 +54,9 @@
 						{% endif %}
 						{% url 'admin:password_change' as password_change_url %}
 						<li>
-							<a href="{% if password_change_url %}{{ password_change_url }}{% else %}{{ root_path }}password_change/{% endif %}">
-							{% trans 'Change password' %}</a>
+							<a href="
+									{% if password_change_url %}{{ password_change_url }}{% else %}{{ root_path }}password_change/{% endif %}">
+								{% trans 'Change password' %}</a>
 						</li>
 						{% url 'admin:logout' as logout_url %}
 						<li>

@@ -1,13 +1,9 @@
 # monkey-pathching django admin
 
-from django.conf import settings as django_settings
 from django.contrib.admin import widgets
 from django import forms
-from django.contrib.contenttypes.models import ContentType
-from django.core.urlresolvers import reverse
-from django.utils.safestring import mark_safe
-from feincms.module.page import modeladmins
-from django.utils.translation import ugettext_lazy as _
+from django.template.loader import render_to_string
+from django.utils.html import format_html
 
 
 class FilteredSelectMultiple(forms.SelectMultiple):
@@ -18,32 +14,52 @@ class FilteredSelectMultiple(forms.SelectMultiple):
     def __init__(self, verbose_name, is_stacked, attrs=None, choices=[]):
         super(FilteredSelectMultiple, self).__init__(attrs, choices)
 
-widgets.FilteredSelectMultiple = FilteredSelectMultiple
 
 class AdminDateWidget(forms.DateInput):
 
     def render(self, name, value, attrs=None):
-
-        return
-
-    def __init__(self, attrs=None, format=None):
-        final_attrs = {'class': 'vDateField', 'size': '10'}
-        if attrs is not None:
-            final_attrs.update(attrs)
-        super(AdminDateWidget, self).__init__(attrs=final_attrs, format=format)
-
-widgets.AdminDateWidget = AdminDateWidget
+        context = {
+            'name': name,
+            'value': value,
+            'attrs': attrs
+        }
+        return render_to_string(
+            'admin/widgets/_admin_date_widget.html',
+            dictionary=context
+        )
 
 
 class AdminTimeWidget(forms.TimeInput):
 
-    def __init__(self, attrs=None, format=None):
-        final_attrs = {'class': 'vTimeField', 'size': '8'}
-        if attrs is not None:
-            final_attrs.update(attrs)
-        super(AdminTimeWidget, self).__init__(attrs=final_attrs, format=format)
+    def render(self, name, value, attrs=None):
+        context = {
+            'name': name,
+            'value': value,
+            'attrs': attrs
+        }
+        return render_to_string(
+            'admin/widgets/_admin_date_widget_mirror.html',
+            dictionary=context
+        )
 
+
+class AdminSplitDateTime(forms.SplitDateTimeWidget):
+    """
+    A SplitDateTime Widget that has some admin-specific styling.
+    """
+    def __init__(self, attrs=None):
+        widgets = [AdminDateWidget, AdminTimeWidget]
+        # Note that we're calling MultiWidget, not SplitDateTimeWidget, because
+        # we want to define widgets.
+        forms.MultiWidget.__init__(self, widgets, attrs)
+
+    def format_output(self, rendered_widgets):
+        return format_html('%s%s' % (rendered_widgets[0],rendered_widgets[1]))
+
+widgets.FilteredSelectMultiple = FilteredSelectMultiple
+widgets.AdminDateWidget = AdminDateWidget
 widgets.AdminTimeWidget = AdminTimeWidget
+widgets.AdminSplitDateTime = AdminSplitDateTime
 
 
 # patching admintools menu item
