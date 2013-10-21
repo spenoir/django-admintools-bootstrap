@@ -103,13 +103,9 @@
 
 					{% block result_list %}
 						{% if action_form and actions_on_top and cl.full_result_count %}
-							<div class="panel-heading">
-								{% admin_actions %}
-							</div>
+							{% admin_actions %}
 						{% endif %}
-						<div class="panel-body">
-							{% result_list cl %}
-						</div>
+						{% result_list cl %}
 						{% if action_form and actions_on_bottom and cl.full_result_count %}
 							<div class="panel-footer">
 								{% admin_actions %}
