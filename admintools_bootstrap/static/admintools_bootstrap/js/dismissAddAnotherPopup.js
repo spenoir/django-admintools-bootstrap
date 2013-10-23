@@ -13,13 +13,13 @@ $(function () {
 
 	// menu search
 
-	var nav_menu = $('#navigation-menu');
+	var nav_menu = $('nav.navbar-nav');
 	var menu_map = [];
 	var menu_url_map = {};
 	var search_results = $('#menu_search ul');
 	var menu_search_visible = false;
 
-	$('#navigation-menu a').not('.dropdown-toggle').each(function (i, a) {
+	$('nav.navbar-nav a').not('.dropdown-toggle').each(function (i, a) {
 		var line = [a.text.toLowerCase().replace(/^\s+|\s+$/g, ''), a.href];
 		menu_map[i] = line;
 		menu_url_map[a.href] = a.text.replace(/^\s+|\s+$/g, '');
@@ -76,7 +76,6 @@ $(function () {
 		menu_search_visible = !menu_search_visible;
 		$('#menu_search').toggle(menu_search_visible);
 		if (menu_search_visible) {
-			$(this).twipsy('hide');
 			$('#menu_search input').focus();
 		}
 	});

@@ -23,6 +23,10 @@ body {
 	background: $mid-grey;
 	@include box-shadow(0px 2px 10px $darkest-grey);
 
+	li {
+		list-style: none;
+	}
+
 	.navbar-brand {
         padding: 15px 15px 15px 0px;
 	}
@@ -246,12 +250,12 @@ td.action-checkbox {
 	position: absolute;
 	z-index: 900;
 	border: 1px solid $light-grey;
-	background-color: $dark-grey;
+	background-color: $light-grey;
 	padding: 3px;
-	left: -193px;
-	top: 1px;
+	left: -140px;
+	top: 56px;
 	@include border-radius(0 0 6px 6px);
-	@include box-shadow(0 2px 4px rgba(0, 0, 0, .2));
+	@include box-shadow(0px 4px 8px $darkest-grey);
 	@include background-clip(padding-box);
 	display: none;
 
@@ -286,7 +290,7 @@ td.action-checkbox {
 		width: 100%;
 		background-color: $white;
 		color: $black !important;
-		border-color: $orange;
+		border-color: $dark-grey;
 		// Placeholder text gets special styles; can't be bundled together though for some reason
 		&:-moz-placeholder {
 			color: $mid-grey;
@@ -377,6 +381,16 @@ fieldset {
 		margin-bottom: 0.5em;
 	}
 }
+
+.vCheckboxLabel {
+	float: left;
+	margin-right: 20px;
+}
+
+input[type="checkbox"] {
+	font-size: 2em;
+}
+
 
 input[type="text"], input[type="password"], .ui-autocomplete-input, textarea, .uneditable-input {
 	width: 100%;
