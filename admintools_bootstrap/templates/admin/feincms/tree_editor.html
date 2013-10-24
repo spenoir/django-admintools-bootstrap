@@ -9,21 +9,7 @@
 
 {% block filters %}
 	{% if cl.has_filters %}
-		<div id="changelist-filter" class="pull-right panel panel-default col-lg-3">
-			<div class="panel-heading">
-			<h2 class="panel-title">{% trans 'Shortcuts' %}</h2>
-				</div>
-			<div class="btn-group-sm">
-				<a class="btn btn-danger" id="collapse_entire_tree" href="#">{% trans 'Collapse tree' %}</a>
-				<a class="btn btn-success" id="open_entire_tree" href="#">{% trans 'Expand tree' %}</a>
-			</div>
-
-
-					<div class="panel-heading">
-					<h2 class="panel-title">{% trans 'Filter' %}</h2>
-					</div>
-			{% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
-		</div>
+		{% include "admin/includes/_filters.html" with feincms="true" %}
 	{% endif %}
 {% endblock %}
 

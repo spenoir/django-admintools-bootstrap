@@ -31,12 +31,13 @@ body {
         padding: 15px 15px 15px 0px;
 	}
 
-	.navbar-brand, .nav li a {
+	.navbar-brand, .nav li a,
+	{
 		font-size: 1.3em;
 	}
 
-	.navbar-right li a {
-		font-size: 1.4em
+	#menu_search a {
+		font-size: 1em;
 	}
 
 	.nav li.dropdown ul a {
@@ -59,8 +60,6 @@ h1, ul, li {
 }
 
 #changelist-filter {
-	max-width: 20%;
-
 	li {
 		list-style: none;
 		list-style-position: outside;
@@ -74,6 +73,15 @@ h1, ul, li {
 	li.selected {
 		border-left: 4px solid gray;
 		padding-left: 4px;
+	}
+}
+
+#changelist-search {
+	width: 15%;
+	margin-top: 0.5em;
+
+	input {
+		@include box-shadow(inset 4px 4px 8px $dark-grey);
 	}
 }
 
@@ -248,12 +256,10 @@ td.action-checkbox {
 
 #menu_search {
 	position: absolute;
-	z-index: 900;
-	border: 1px solid $light-grey;
 	background-color: $light-grey;
 	padding: 3px;
 	left: -140px;
-	top: 56px;
+	top: 53px;
 	@include border-radius(0 0 6px 6px);
 	@include box-shadow(0px 4px 8px $darkest-grey);
 	@include background-clip(padding-box);
@@ -267,20 +273,15 @@ td.action-checkbox {
 			float: none;
 			padding: 0px;
 			a {
-				text-shadow: none;
-				padding: 0.2em 0.5em;
-				color: $mid-grey;
-				&:hover, &:focus {
-					color: $mid-grey;
-					span.highlight {
-						color: $light-grey;
-					}
-					background-color: $mid-grey;
+				display: block;
+				&:hover {
+					text-decoration: none;
 				}
 
 				span.highlight {
-					color: $dark-grey;
-					font-weight: bold;
+					color: $orange;
+					font-weight: bolder;
+					text-decoration: underline;
 				}
 			}
 		}
@@ -289,30 +290,15 @@ td.action-checkbox {
 	input {
 		width: 100%;
 		background-color: $white;
-		color: $black !important;
+		color: $dark-grey;
 		border-color: $dark-grey;
+		font-size: 1.3em;
 		// Placeholder text gets special styles; can't be bundled together though for some reason
 		&:-moz-placeholder {
 			color: $mid-grey;
 		}
-		&::-webkit-input-placeholder {
+		&:-webkit-input-placeholder {
 			color: $mid-grey;
-		}
-		// Hover states
-		&:hover {
-			background-color: $light-grey;
-			background-color: rgba(255, 255, 255, .5);
-			color: $white;
-		}
-		// Focus states (we use .focused since IE8 and down doesn't support :focus)
-		&:focus,
-		&.focused {
-			background-color: $white;
-			color: $dark-grey;
-			text-shadow: 0 1px 0 $white;
-			border: 0;
-			padding: 4px 9px;
-			@include box-shadow(0 0 3px rgba(0, 0, 0, .15));
 		}
 	}
 
