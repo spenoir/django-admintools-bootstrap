@@ -80,14 +80,7 @@
 
 		{% block filters %}
 			{% if cl.has_filters %}
-		<div id="changelist-filter" class="pull-right col-lg-3">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-				<h2 class="panel-title">{% trans 'Filter' %}</h2>
-				</div>
-				{% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
-			</div>
-		</div>
+				{% include "admin/includes/_filters.html" %}
 			{% endif %}
 		{% endblock %}
 
