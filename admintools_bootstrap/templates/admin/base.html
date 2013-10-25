@@ -29,6 +29,7 @@
 	{% block nav-global %}{% endblock %}
 	{% block search %}{% endblock %}
 	{% if user.is_active and user.is_staff %}
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav navbar-right">
 			<li id="menu-search-container">
 				<a href="#" id="menu-search-toggle" class="top-icon" title="{% trans "Menu Search" %}"
@@ -71,6 +72,7 @@
 				</ul>
 			</li>
 		</ul>
+		</div>
 	{% endif %}
 </header>
 <!-- END Header -->
