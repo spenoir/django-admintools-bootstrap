@@ -5,7 +5,7 @@
 	<span class="input-group-addon">
 	    <span class="glyphicon glyphicon-calendar"></span>
     </span>
-	<input type="text" class="form-control" size="10"
+	<input type="text" class="form-control" size="20"
 	       {% if name %}name="{{ name }}"{% endif %}
 	       {% if value %}value="{{ value }}"{% else %}value="{% now "Y-m-d" %}"{% endif %} readonly
 			{% for attr_key, attr_val in attrs.items %}

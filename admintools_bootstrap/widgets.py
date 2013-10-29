@@ -107,6 +107,21 @@ class BootstrapAdminSplitDateTime(forms.SplitDateTimeWidget):
 
 class BootstrapRelatedFieldWidgetWrapper(forms.Widget):
 
+    def __init__(self, widget, rel, admin_site, can_add_related=None):
+        self.is_hidden = widget.is_hidden
+        self.needs_multipart_form = widget.needs_multipart_form
+        self.attrs = widget.attrs
+        self.choices = widget.choices
+        self.widget = widget
+        self.rel = rel
+        # Backwards compatible check for whether a user can add related
+        # objects.
+        if can_add_related is None:
+            can_add_related = rel.to in admin_site._registry
+        self.can_add_related = can_add_related
+        # so we can check if the related object is registered with this AdminSite
+        self.admin_site = admin_site
+
     @property
     def media(self):
         return self.widget.media

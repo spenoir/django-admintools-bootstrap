@@ -334,9 +334,18 @@ td.action-checkbox {
 	@include form-control;
 }
 
-.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
-	height: auto;
+.chosen-container-multi,
+.chosen-container-single {
+
+	.chosen-choices li.search-field input[type="text"] {
+		height: auto;
+	}
+
+	+ a {
+		margin-left: 10px;
+	}
 }
+
 
 input[type="text"].vForeignKeyRawIdAdminField {
 	width: 97%;
