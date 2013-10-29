@@ -15,7 +15,8 @@ I've also updated to Bootstrap 3 and fixed a few bugs, as well as restyling thin
 Screenshots
 -----------
 
-Coming soon
+.. image:: screen-shot-2013-10-29.png
+.. image:: screen-shot-2013-10-29.2.png
 
 Usage
 -----

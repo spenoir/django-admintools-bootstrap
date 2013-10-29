@@ -1,5 +1,5 @@
 $(function(){
-	$('select').chosen({
+		$('div:not(.action-wrapper) select').chosen({
 		disable_search_threshold: 10,
 		width: "97%",
 		height: "34px"

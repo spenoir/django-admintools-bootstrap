@@ -5,8 +5,8 @@ from django.utils.html import format_html
 
 
 from django.contrib import admin
-from django.db.models import DateTimeField, ImageField, ForeignKey
-from admintools_bootstrap.widgets import BootstrapAdminSplitDateTime, BootstrapAdminImageWidget, BootstrapRelatedFieldWidgetWrapper
+from django.db.models import DateTimeField, ImageField, ForeignKey, DateField
+from admintools_bootstrap.widgets import BootstrapAdminSplitDateTime, BootstrapAdminImageWidget, BootstrapRelatedFieldWidgetWrapper, BootstrapAdminDateWidget
 
 
 class BootstrapModelAdmin(admin.ModelAdmin):
@@ -16,6 +16,7 @@ class BootstrapModelAdmin(admin.ModelAdmin):
     """
     formfield_overrides = {
         DateTimeField: {'widget': BootstrapAdminSplitDateTime},
+        DateField: {'widget': BootstrapAdminDateWidget},
         ImageField: {'widget': BootstrapAdminImageWidget},
         #ForeignKey: {'widget': BootstrapRelatedFieldWidgetWrapper}
     }
