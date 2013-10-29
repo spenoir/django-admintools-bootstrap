@@ -1,8 +1,9 @@
-
-<input type="text" class="form-control" size="8"
-       {% if name %}name="{{ name }}"{% endif %}
-       {% if value %}value="{{ value }}"{% else %}value="{% now "H:i:s" %}"{% endif %} readonly
-	{% for attr_key, attr_val in attrs.items %}
-		{{ attr_key }}="{{ attr_val }}"
-    {% endfor %}
-	/>
+<div class="date">
+	<input type="text" class="form-control" size="8"
+	       {% if name %}name="{{ name }}"{% endif %}
+	       {% if value %}value="{{ value }}"{% else %}value="{% now "H:i:s" %}"{% endif %} readonly
+			{% for attr_key, attr_val in attrs.items %}
+				{{ attr_key }}="{{ attr_val }}"
+			{% endfor %}
+			/>
+</div>

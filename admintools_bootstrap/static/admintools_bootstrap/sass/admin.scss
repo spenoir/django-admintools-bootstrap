@@ -8,6 +8,7 @@ $menu_search_width: 190px;
 
 body {
 	margin-top: 6em;
+	background: $light-grey;
 }
 
 .main-container, header {
@@ -49,6 +50,7 @@ body {
 
 .breadcrumb {
   padding: 8px 3%;
+	background: $mid-grey;
 }
 
 .page-top .pull-right {
@@ -326,8 +328,14 @@ td.action-checkbox {
 .vDateField,
 .selectfilter,
 #id_tags,
-#id_ip_address {
+#id_ip_address,
+.chosen-container-single .chosen-single,
+.chosen-container-multi .chosen-choices {
 	@include form-control;
+}
+
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+	height: auto;
 }
 
 input[type="text"].vForeignKeyRawIdAdminField {
@@ -368,6 +376,13 @@ fieldset {
 	}
 }
 
+.form-row {
+	margin-bottom: 1em;
+	&:last-child {
+		margin-bottom: auto;
+	}
+}
+
 .vCheckboxLabel {
 	float: left;
 	margin-right: 20px;
@@ -380,4 +395,12 @@ input[type="checkbox"] {
 
 input[type="text"], input[type="password"], .ui-autocomplete-input, textarea, .uneditable-input {
 	width: 100%;
+}
+
+.date {
+	padding-left: 0;
+
+	input[type="text"] {
+		width: auto;
+	}
 }

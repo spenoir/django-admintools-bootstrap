@@ -1,4 +1,10 @@
-<div class="input-group date form_datetime" data-date="{% now "Y-m-d H:i:s" %}">
+<div class="input-group col-lg-2 input-group-lg date form_datetime" data-date="{% now "Y-m-d H:i:s" %}">
+	<span class="input-group-addon">
+	    <span class="glyphicon glyphicon-remove"></span>
+	</span>
+	<span class="input-group-addon">
+	    <span class="glyphicon glyphicon-calendar"></span>
+    </span>
 	<input type="text" class="form-control" size="10"
 	       {% if name %}name="{{ name }}"{% endif %}
 	       {% if value %}value="{{ value }}"{% else %}value="{% now "Y-m-d" %}"{% endif %} readonly
@@ -6,10 +12,4 @@
 				{{ attr_key }}="{{ attr_val }}"
 			{% endfor %}
 			/>
-    <span class="input-group-addon">
-	    <span class="glyphicon glyphicon-remove"></span>
-	</span>
-	<span class="input-group-addon">
-	    <span class="glyphicon glyphicon-calendar"></span>
-    </span>
 </div>
