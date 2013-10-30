@@ -16,7 +16,7 @@ Screenshots
 -----------
 
 .. image:: screen-shot-2013-10-29.png
-.. image:: screen-shot-2013-10-29.2.png
+.. image:: screen-shot-2013-10-20.2.png
 
 Usage
 -----
