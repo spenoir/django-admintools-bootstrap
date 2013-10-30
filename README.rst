@@ -39,17 +39,6 @@ To enable this feature, add `django.contrib.sites` to your `INSTALLED_APPS` list
 Set site name and domain in `django.contrib.sites` admin.
 
 
-Icons in menu items
--------------------
-
-You can display icon from JQuery UI icon set on menu items. Add icon argument to MenuItem definition::
-
- items.AppList(
-        _('Users'),
-        models=('django.contrib.auth.*',),
-        icon='ui-icon-person'
- )
-
 
 Settings
 --------
@@ -65,7 +54,6 @@ Media generator bundles are created for admin.js and admin.css.
 Used software:
 --------------
 
-* http://addyosmani.github.com/jquery-ui-bootstrap/
 * http://twitter.github.com/bootstrap/
 * https://bitbucket.org/izi/django-admin-tools/
 * http://www.crummy.com/software/BeautifulSoup/
@@ -74,8 +62,8 @@ Used software:
 * https://bitbucket.org/wkornewald/django-mediagenerator/
 * http://sass-lang.com/
 
+
 TODO
 ----
 
-* Fix some bugs
-* Add multi-dropdown support
+* better mobile support
