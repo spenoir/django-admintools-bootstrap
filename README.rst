@@ -19,6 +19,17 @@ Screenshots
 .. image:: screen-shot-2013-10-20.2.png
 
 
+Features
+--------
+
+* Bootstrap 3
+* Much nicer widgets for images and dates
+* Responsive
+* Some nice icons
+* Dashboard
+* Cleaner javascript
+
+
 Install
 -------
 
@@ -92,3 +103,4 @@ TODO
 ----
 
 * better mobile support
+* get rid of those green plus icons!
