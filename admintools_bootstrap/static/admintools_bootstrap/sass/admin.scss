@@ -53,6 +53,10 @@ body {
 	background: $mid-grey;
 }
 
+.breadcrumb > li + li:before {
+	color: $dark-grey;
+}
+
 .page-top .pull-right {
 	margin-top: -33px;
 }
