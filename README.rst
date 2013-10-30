@@ -15,18 +15,40 @@ I've also updated to Bootstrap 3 and fixed a few bugs, as well as restyling thin
 Screenshots
 -----------
 
-Coming soon
+.. image:: screen-shot-2013-10-29.png
+.. image:: screen-shot-2013-10-20.2.png
 
-Usage
------
 
-Install package::
+Install
+-------
 
  $ pip install -e hg+https://github.com/spenoir/django-admintools-bootstrap#egg=admintools_bootstrap
 
 * Insert `admintools_bootstrap` to your INSTALLED_APPS before `admin_tools` and `django.contrib.admin` apps.
 * Make sure you have static files application installed and configured. See https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/ for details.
 * Enjoy.
+
+
+Widgets
+-------
+
+There are some custom widgets for your pleasure including a nice image widget I picked up and a bootstrap-datetimepicker.js implementation.
+To use these widgets, just subclass admintools_bootstrap.models.BootstrapModelAdmin in your admin.py files
+
+	from admintools_bootstrap.models import BootstrapModelAdmin
+
+	class ExampleAdmin(BootstrapModelAdmin):
+	...
+
+Alternatively if you are already subclassing something else you can simply do it like this using formfield_overrides:
+
+	class ExampleModelAdmin(admin.ModelAdmin):
+
+		formfield_overrides = {
+	        DateTimeField: {'widget': BootstrapAdminSplitDateTime},
+	        DateField: {'widget': BootstrapAdminDateWidget},
+	        ImageField: {'widget': BootstrapAdminImageWidget},
+	    }
 
 
 Site name in navigation bar and title
@@ -51,6 +73,7 @@ If not False, display specified link to site in the top panel
 
 Media generator bundles are created for admin.js and admin.css.
 
+
 Used software:
 --------------
 
@@ -61,6 +84,8 @@ Used software:
 * http://pypi.python.org/pypi/versiontools
 * https://bitbucket.org/wkornewald/django-mediagenerator/
 * http://sass-lang.com/
+* bootstrap-datetimepicker.js
+* some nice image widget which i'll find the link for!
 
 
 TODO

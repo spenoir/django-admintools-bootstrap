@@ -10,19 +10,16 @@
 		{% trans "Modules" %}
 		<span class="caret"></span>
 	</button>
-
-
-		<ul class="dropdown-menu">
-			{% spaceless %}
-				{% for module in dashboard.children %}
-					{% if not module.enabled %}
-						<li><a href="#" rel="module_{{ module.id }}"
-						       class="addlink add-dashboard-module">{{ module.title }}</a></li>
-					{% endif %}
-				{% endfor %}
-			{% endspaceless %}
-		</ul>
-
+	<ul class="dropdown-menu">
+		{% spaceless %}
+			{% for module in dashboard.children %}
+				{% if not module.enabled %}
+					<li><a href="#" rel="module_{{ module.id }}"
+					       class="addlink add-dashboard-module">{{ module.title }}</a></li>
+				{% endif %}
+			{% endfor %}
+		{% endspaceless %}
+	</ul>
 </div>
 <div id="{{ dashboard.get_id }}" class="dashboard-container">
 	{% for module in dashboard.children %}
