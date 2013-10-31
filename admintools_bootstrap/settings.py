@@ -39,9 +39,3 @@ class AdminToolsBootstrapConf(AppConf):
 
     class Meta:
         prefix = 'ADMINTOOLS_BOOTSTRAP'
-
-
-if getattr(settings, 'MEDIA_BUNDLES'):
-    settings.MEDIA_BUNDLES += ADMIN_MEDIA_BUNDLES
-else:
-    setattr(settings, 'MEDIA_BUNDLES', ADMIN_MEDIA_BUNDLES)

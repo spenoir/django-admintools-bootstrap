@@ -37,6 +37,11 @@ Install
 
 * Insert `admintools_bootstrap` to your INSTALLED_APPS before `admin_tools` and `django.contrib.admin` apps.
 * Make sure you have static files application installed and configured. See https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/ for details.
+* add the following below where MEDIA_BUNDLES is set in your settings file:
+
+    from admintools_bootstrap.settings import ADMIN_MEDIA_BUNDLES
+    MEDIA_BUNDLES += ADMIN_MEDIA_BUNDLES
+
 * Enjoy.
 
 

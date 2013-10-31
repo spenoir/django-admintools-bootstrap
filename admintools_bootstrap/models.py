@@ -20,6 +20,3 @@ class BootstrapModelAdmin(admin.ModelAdmin):
         ImageField: {'widget': BootstrapAdminImageWidget},
         #ForeignKey: {'widget': BootstrapRelatedFieldWidgetWrapper}
     }
-
-
-import admintools_bootstrap.settings
