@@ -1,12 +1,7 @@
-from django.contrib.admin import widgets
-from django import forms
-from django.template.loader import render_to_string
-from django.utils.html import format_html
-
-
+from appconf import AppConf
 from django.contrib import admin
-from django.db.models import DateTimeField, ImageField, ForeignKey, DateField
-from admintools_bootstrap.widgets import BootstrapAdminSplitDateTime, BootstrapAdminImageWidget, BootstrapRelatedFieldWidgetWrapper, BootstrapAdminDateWidget
+from django.db.models import DateTimeField, ImageField, DateField
+from admintools_bootstrap.widgets import BootstrapAdminSplitDateTime, BootstrapAdminImageWidget, BootstrapAdminDateWidget
 
 
 class BootstrapModelAdmin(admin.ModelAdmin):
@@ -20,3 +15,11 @@ class BootstrapModelAdmin(admin.ModelAdmin):
         ImageField: {'widget': BootstrapAdminImageWidget},
         #ForeignKey: {'widget': BootstrapRelatedFieldWidgetWrapper}
     }
+
+
+
+class AdminToolsBootstrapConf(AppConf):
+    SITE_LINK = '/'
+
+    class Meta:
+        prefix = 'ADMINTOOLS_BOOTSTRAP'
