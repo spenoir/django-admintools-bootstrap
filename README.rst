@@ -110,3 +110,4 @@ TODO
 
 * better mobile support
 * get rid of those green plus icons!
+* improve the dashboard views

@@ -28,7 +28,7 @@
 </div>
 
 <script type="text/javascript">
-	LazyLoad.js({{ STATIC_URL }} + "admin_tools/js/dashboard.js", function() {
+	LazyLoad.js("{{ STATIC_URL }}admin_tools/js/dashboard.js", function() {
         init_dashboard(
             '{{ dashboard.get_id }}',
             {{ dashboard.columns }},
