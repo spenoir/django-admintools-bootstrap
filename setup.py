@@ -18,6 +18,9 @@ setup(
     url='https://github.com/spenoir/django-admintools-bootstrap',
     description='Bootstrap theme mediagenerator bundle for django admin',
     long_description=__doc__,
+    setup_requires = [
+        'versiontools >= 1.8.2',
+    ],
     install_requires=install_requires,
     packages=find_packages(),
     license='MIT',
