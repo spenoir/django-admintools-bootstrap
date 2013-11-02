@@ -24,10 +24,11 @@ Features
 
 * Bootstrap 3
 * Much nicer widgets for images and dates
-* Responsive
+* More responsive
 * Some nice icons
 * Dashboard
 * Cleaner javascript
+* Feincms tree editor support
 
 
 Install

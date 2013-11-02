@@ -52,21 +52,21 @@ h1.dashboard-title {
     float: left;
     min-height: 200px;
 
+	&:first-child {
+		padding: 10px 10px 5px 0px;
+	}
+
+	&:last-child {
+		padding: 10px 0px 5px 10px;
+	}
+
 	.dashboard-module {
-	    margin: 10px 10px 5px 10px;
+		margin-bottom: 10px;
 	    padding: 1px;
 	    border: 1px solid #e5e5e5;
 	    -moz-border-radius: 6px;
 	    -webkit-border-radius: 6px;
 		background: $white;
-
-		&:nth-child(odd) {
-			margin-left: 0;
-		}
-
-		&:nth-child(even) {
-			margin-right: 0;
-		}
 	}
 }
 
