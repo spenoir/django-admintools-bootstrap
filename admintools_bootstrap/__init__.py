@@ -1,4 +1,4 @@
-__version__ = (0, 1, 2, "candidate", 0)
+__version__ = (0, 1, 2, "candidate", 1)
 
 
 ADMIN_MEDIA_BUNDLES = (
