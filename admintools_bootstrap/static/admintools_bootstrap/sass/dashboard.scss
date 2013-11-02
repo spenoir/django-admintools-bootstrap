@@ -162,11 +162,13 @@ h1.dashboard-title {
     line-height: 20px;
 }
 
-.dashboard-module ul li.odd {
+.dashboard-module ul li.odd,
+.dashboard-module-content ul li:nth-child(odd) {
     background: #f5f5f5;
 }
 
-.dashboard-module ul li.even {
+.dashboard-module ul li.even,
+.dashboard-module-content ul li:nth-child(even) {
     background: #ffffff;
 }
 
@@ -181,7 +183,7 @@ h1.dashboard-title {
     float: right;
 }
 
-.dashboard-module ul li ul li {
+.dashboard-module .dashboard-module-content ul li ul li {
     display: block;
     float: left;
     border: 0;
@@ -189,6 +191,7 @@ h1.dashboard-title {
     vertical-align: top;
     height: auto;
     line-height: 1.2em;
+	background: none;
 }
 
 .dashboard-module ul li:hover {

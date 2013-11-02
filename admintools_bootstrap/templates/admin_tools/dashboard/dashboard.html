@@ -23,9 +23,7 @@
 </div>
 <div id="{{ dashboard.get_id }}" class="dashboard-container">
 	{% for module in dashboard.children %}
-		<div class="{% cycle 'odd' 'even' %}">
 		{% admin_tools_render_dashboard_module module %}
-		</div>
 	{% endfor %}
 </div>
 

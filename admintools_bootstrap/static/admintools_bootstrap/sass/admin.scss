@@ -66,19 +66,12 @@ h1, ul, li {
 }
 
 #changelist-filter {
-	li {
-		list-style: none;
-		list-style-position: outside;
-		padding-left: 8px;
+	h3 {
+		margin-top: 0;
 	}
 
-	ul {
-		margin-left: -0.5em;
-	}
-
-	li.selected {
-		border-left: 4px solid gray;
-		padding-left: 4px;
+	.well-sm {
+		padding-right: 0;
 	}
 }
 
@@ -348,7 +341,12 @@ td.action-checkbox {
 	+ a {
 		margin-left: 10px;
 	}
+
+	.chosen-single div b {
+		background-position: 0 6px;
+	}
 }
+
 
 
 input[type="text"].vForeignKeyRawIdAdminField {

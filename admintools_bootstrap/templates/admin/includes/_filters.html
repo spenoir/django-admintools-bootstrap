@@ -1,9 +1,9 @@
 {% load i18n admin_list %}
 <div id="changelist-filter" class="pull-right col-lg-3">
-	{% if feincms = 'true' %}
+	{% if feincms == 'true' %}
 	<div class="panel panel-info">
 		<div class="panel-heading">
-			<h2 class="panel-title">{% trans 'Tree Shortcuts' %}</h2>
+			<h3 class="panel-title">{% trans 'Tree Shortcuts' %}</h3>
 		</div>
 		<div class="btn-group">
 			<a class="btn btn-default glyphicon glyphicon-collapse-up" id="collapse_entire_tree" href="#">{% trans 'Collapse' %}</a>
@@ -12,10 +12,9 @@
 	</div>
 	{% endif %}
 
-	<div class="panel panel-info">
-		<div class="panel-heading">
-			<h2 class="panel-title">{% trans 'Filter' %}</h2>
-		</div>
+	<div class="well-sm">
+		<h3>{% trans 'Filters' %}</h3>
+
 		{% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
 	</div>
 </div>

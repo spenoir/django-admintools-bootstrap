@@ -1,0 +1,11 @@
+{% load i18n %}
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h3 class="panel-title">{% blocktrans with filter_title=title %} By {{ filter_title }} {% endblocktrans %}</h3>
+	</div>
+	<div class="list-group">
+	{% for choice in choices %}
+	    <a class="list-group-item {% if choice.selected %}active{% endif %}" href="{{ choice.query_string|iriencode }}">{{ choice.display }}</a>
+	{% endfor %}
+	</div>
+</div>
