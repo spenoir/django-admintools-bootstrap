@@ -40,8 +40,8 @@
 {% block messages %}
 	{{ block.super }}
 	{% if errors %}
-		<div class="alert-message error{% if adminform.form.non_form_errors %} block-message{% endif %}"
-		     data-alert="alert"><a class="close" href="#"><span class="glyphicon glyphicon-remove"></span></a>
+		<div class="alert alert-danger{% if adminform.form.non_form_errors %} block-message{% endif %}"
+		     data-alert="alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 			{% blocktrans count errors|length as counter %}Please correct the error below.{% plural %}Please correct the
 				errors below.{% endblocktrans %}
 			{{ adminform.form.non_field_errors }}

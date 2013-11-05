@@ -67,8 +67,8 @@
 {% block messages %}
 	{{ block.super }}
 	{% if cl.formset.errors %}
-		<div class="alert-message error{% if cl.formset.non_form_errors %} block-message{% endif %}" data-alert="alert">
-			<a class="close" href="#">x</a>
+		<div class="alert alert-danger{% if cl.formset.non_form_errors %} block-message{% endif %}" data-alert="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 			{% blocktrans count cl.formset.errors|length as counter %}Please correct the error below.{% plural %}Please
 				correct the errors below.{% endblocktrans %}
 			{{ cl.formset.non_form_errors }}

@@ -89,7 +89,7 @@
 	{% block messages %}
 		{% if messages %}
 			{% for message in messages %}
-				<div class="alert-message {{ message.tags }}" data-alert="alert">
+				<div class="alert alert-warning {{ message.tags }}" data-alert="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					{{ message }}
 				</div>
