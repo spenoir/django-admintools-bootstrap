@@ -8,9 +8,9 @@ This module started out life here:
 
 https://bitbucket.org/salvator/django-admintools-bootstrap
 
-I've developed it to fit into my preferred Django stack that includes mediagenerator and SASS. I'm currently trying to get this included as part of Django proper. Please star it if you would like to see it included as part of Django.
-I've also updated to Bootstrap 3 and fixed a few bugs, as well as restyling things and including Glyphicons.
+I've developed it to fit into my preferred Django stack that includes mediagenerator and SASS. I've also updated to Bootstrap 3 and fixed a few bugs, as well as restyling things and including Glyphicons.
 
+I'm currently trying to get this included as part of Django proper. Please star it if you would like to see it included as part of Django. Please remember that this is just a quick prototype and will be fully tested if accepted.
 
 Screenshots
 -----------
