@@ -8,7 +8,7 @@ This module started out life here:
 
 https://bitbucket.org/salvator/django-admintools-bootstrap
 
-I've developed it to fit into my preferred Django stack that includes mediagenerator and SASS.
+I've developed it to fit into my preferred Django stack that includes mediagenerator and SASS. I'm currently trying to get this included as part of Django proper. Please star it if you would like to see it included as part of Django.
 I've also updated to Bootstrap 3 and fixed a few bugs, as well as restyling things and including Glyphicons.
 
 
@@ -29,6 +29,7 @@ Features
 * Dashboard
 * Cleaner javascript
 * Feincms tree editor support
+* Admin Widgets easier to extend with custom templates
 
 
 Install
