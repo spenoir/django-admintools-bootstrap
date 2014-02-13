@@ -112,3 +112,4 @@ TODO
 * better mobile support
 * get rid of those green plus icons!
 * improve the dashboard views
+* reduce dependencies, in particular mediagenerator. Then just add support for it
